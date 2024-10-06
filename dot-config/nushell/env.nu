@@ -115,7 +115,7 @@ $env.PATH = (
     | append ($nu.home-path | path join '.nimble/bin')
     | append ($nu.home-path | path join '.bun/bin')
     | append ($nu.home-path | path join 'Projects/Odin/')
-    | append ($nu.home-path | path join 'Programs/roc_nightly-linux_x86_64-2024-07-13-070d14a')
+    | append ($nu.home-path | path join 'Programs/roc_nightly-linux_x86_64-2024-10-02-aaeefc0')
     | append ($nu.home-path | path join 'Projects/ols/')
     | append ($nu.home-path | path join 'Projects/wi/')
     | append ($nu.home-path | path join '.local/share/gem/ruby/3.0.0/bin')
