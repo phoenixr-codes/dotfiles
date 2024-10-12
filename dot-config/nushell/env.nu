@@ -98,6 +98,8 @@ $env.NU_PLUGIN_DIRS = [
     ($nu.default-config-dir | path join 'plugins') # add <nushell-config-dir>/plugins
 ]
 
+$env.TMPDIR = '/tmp'
+
 $env.ANDROID_HOME = ($nu.home-path | path join 'Android/Sdk')
 $env.EDITOR = hx
 
@@ -114,6 +116,7 @@ $env.PATH = (
     | append ($nu.home-path | path join '.local/bin')
     | append ($nu.home-path | path join '.nimble/bin')
     | append ($nu.home-path | path join '.bun/bin')
+    | append ($nu.home-path | path join '.deno/bin')
     | append ($nu.home-path | path join 'Projects/Odin/')
     | append ($nu.home-path | path join 'Programs/roc_nightly-linux_x86_64-2024-10-02-aaeefc0')
     | append ($nu.home-path | path join 'Projects/ols/')
