@@ -127,8 +127,8 @@ $env.PATH = (
 )
 
 if (which nvim | is-not-empty) {
-    $env.EDITOR = nvim
+    $env.EDITOR = "nvim"
 } else if (which hx | is-not-empty) {
-  $env.EDITOR = hx
+  $env.EDITOR = "hx"
 }
 
