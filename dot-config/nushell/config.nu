@@ -791,7 +791,9 @@ $env.config = {
 alias disfire = sudo systemctl stop firewalld
 alias rr = java -jar ($nu.home-path | path join Programs rr.war)
 
-neofetch
+if (which neofetch | is-not-empty) {
+    neofetch
+}
 
 use nu-themes/dracula.nu
 dracula set color_config

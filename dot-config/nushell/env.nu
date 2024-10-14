@@ -101,7 +101,6 @@ $env.NU_PLUGIN_DIRS = [
 $env.TMPDIR = $nu.temp-path
 
 $env.ANDROID_HOME = ($nu.home-path | path join 'Android/Sdk')
-$env.EDITOR = hx
 
 $env.DEVKITPRO = '/opt/devkitpro'
 $env.DEVKITARM = '/opt/devkitpro/devkitARM'
@@ -126,3 +125,10 @@ $env.PATH = (
     | append ($env.DEVKITPRO | path join 'tools/bin')
     | append ($env.DEVKITARM | path join 'bin')
 )
+
+if (which nvim | is-not-empty) {
+    $env.EDITOR = nvim
+} else if (which hx | is-not-empty) {
+  $env.EDITOR = hx
+}
+
