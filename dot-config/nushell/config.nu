@@ -803,5 +803,7 @@ if ("~/nu_scripts/themes/nu-themes/dracula.nu" | path exists) {
 }
 
 # Starship
-use ~/.cache/starship/init.nu
+if (which starship | is-not-empty) {
+    use ~/.cache/starship/init.nu
+}
 
