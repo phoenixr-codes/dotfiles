@@ -151,7 +151,7 @@ $env.config = {
     }
 
     rm: {
-        always_trash: (not (sys host | get long_os_version | str contains "Android")) # always act as if -t was given. Can be overridden with -p
+        always_trash: (not (is-android)) # always act as if -t was given. Can be overridden with -p
     }
 
     table: {
