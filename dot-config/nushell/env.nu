@@ -96,6 +96,10 @@ $env.NU_PLUGIN_DIRS = [
     ($nu.default-config-dir | path join 'plugins') # add <nushell-config-dir>/plugins
 ]
 
+def is-android [] {
+  (sys host).long_os_version | str contains "Android"
+}
+
 $env.TMPDIR = $nu.temp-path
 
 $env.ANDROID_HOME = ($nu.home-path | path join 'Android/Sdk')
@@ -131,3 +135,6 @@ if (which nvim | is-not-empty) {
   $env.EDITOR = "hx"
 }
 
+if (is-android) {
+  $env.STARSHIP_CONFIG = ($nu.home-path | path join '.config/starship-android.toml')
+}
