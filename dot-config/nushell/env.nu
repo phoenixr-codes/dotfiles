@@ -1,6 +1,4 @@
 # Nushell Environment Config File
-#
-# version = "0.88.1"
 
 def create_left_prompt [] {
     let home =  $nu.home-path
@@ -119,6 +117,7 @@ $env.PATH = (
     | append ($nu.home-path | path join '.local/share/gem/ruby/3.2.0/bin')
     | append ($nu.home-path | path join 'Projects/Odin/')
     | append ($nu.home-path | path join 'Programs/roc_nightly-linux_x86_64-2024-10-02-aaeefc0')
+    | append ($nu.home-path | path join 'Programs/clion-2024.2.2/bin')
     | append ($nu.home-path | path join 'Projects/ols/')
     | append ($nu.home-path | path join 'Projects/wi/')
     | append ($nu.home-path | path join '.local/share/gem/ruby/3.0.0/bin')
