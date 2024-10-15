@@ -44,6 +44,8 @@ def create_right_prompt [] {
     ([$last_exit_code, (char space), $time_segment] | str join)
 }
 
+$env.ON_ANDROID = ((sys host).long_os_version | str contains "Android")
+
 # Use nushell functions to define your right and left prompt
 $env.PROMPT_COMMAND = {|| create_left_prompt }
 # FIXME: This default is not implemented in rust code as of 2023-09-08.
@@ -96,10 +98,6 @@ $env.NU_PLUGIN_DIRS = [
     ($nu.default-config-dir | path join 'plugins') # add <nushell-config-dir>/plugins
 ]
 
-def is-android [] {
-  (sys host).long_os_version | str contains "Android"
-}
-
 $env.TMPDIR = $nu.temp-path
 
 $env.ANDROID_HOME = ($nu.home-path | path join 'Android/Sdk')
@@ -135,6 +133,23 @@ if (which nvim | is-not-empty) {
   $env.EDITOR = "hx"
 }
 
-if (is-android) {
+if ($env.ON_ANDROID) {
   $env.STARSHIP_CONFIG = ($nu.home-path | path join '.config/starship-android.toml')
+}
+
+do {
+  let motd_path = ($nu.home-path | path join '.cache/motd.txt')
+  let motd_is_old = if ($motd_path | path exists) {
+    ((date now) - (ls $motd_path | first).modified) > 1day
+  } else {
+    touch $motd_path
+    true
+  }
+  if $motd_is_old {
+    try {
+      # do not make a request in case we have no wifi
+      let motd = (http get --max-time 2 https://zenquotes.io/api/random/ | first)
+      $"($motd.q)\n~ ($motd.a)" | save -f ($nu.home-path | path join $motd_path)
+    }
+  }
 }

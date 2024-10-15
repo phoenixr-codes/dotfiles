@@ -151,7 +151,7 @@ $env.config = {
     }
 
     rm: {
-        always_trash: (not (is-android)) # always act as if -t was given. Can be overridden with -p
+        always_trash: (not ($env.ON_ANDROID)) # Android does not support trash
     }
 
     table: {
