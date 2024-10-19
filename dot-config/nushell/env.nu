@@ -127,6 +127,10 @@ $env.PATH = (
     | append ($env.DEVKITARM | path join 'bin')
 )
 
+if ("~/.config/nushell/secrets.nu" | path exists) {
+  source-env ~/.config/nushell/secrets.nu
+}
+
 if (which nvim | is-not-empty) {
     $env.EDITOR = "nvim"
 } else if (which hx | is-not-empty) {
