@@ -3,8 +3,7 @@ require("nvchad.configs.lspconfig").defaults()
 
 local lspconfig = require "lspconfig"
 
--- EXAMPLE
-local servers = { "html", "cssls", "pylsp", "ts_ls", "ruby_lsp" }
+local servers = { "html", "cssls", "pylsp", "ruby_lsp" }
 local nvlsp = require "nvchad.configs.lspconfig"
 
 -- lsps with default config
@@ -16,9 +15,16 @@ for _, lsp in ipairs(servers) do
   }
 end
 
--- configuring single server, example: typescript
--- lspconfig.tsserver.setup {
---   on_attach = nvlsp.on_attach,
---   on_init = nvlsp.on_init,
---   capabilities = nvlsp.capabilities,
--- }
+lspconfig.denols.setup {
+  on_attach = nvlsp.on_attach,
+  on_init = nvlsp.on_init,
+  root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
+}
+
+lspconfig.ts_ls.setup {
+  on_attach = nvlsp.on_attach,
+  on_init = nvlsp.on_init,
+  root_dir = lspconfig.util.root_pattern("package.json"),
+  capabilities = nvlsp.capabilities,
+  single_file_support = false,
+}
