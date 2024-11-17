@@ -101,6 +101,7 @@ $env.NU_PLUGIN_DIRS = [
 $env.TMPDIR = $nu.temp-path
 
 $env.ANDROID_HOME = ($nu.home-path | path join 'Android/Sdk')
+$env.NDK_HOME = ($nu.home-path | path join 'Android/Ndk')
 
 $env.DEVKITPRO = '/opt/devkitpro'
 $env.DEVKITARM = '/opt/devkitpro/devkitARM'
