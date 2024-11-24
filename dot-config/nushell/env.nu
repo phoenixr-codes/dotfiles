@@ -123,6 +123,7 @@ $env.PATH = (
     | append ($nu.home-path | path join 'Programs/clion-2024.2.2/bin')
     | append ($nu.home-path | path join 'Projects/ols/')
     | append ($nu.home-path | path join 'Projects/wi/')
+    | append ($nu.home-path | path join 'Projects/MCCompiledSource/mc-compiled/bin/Release/net9.0/')
     | append ($nu.home-path | path join '.local/share/gem/ruby/3.0.0/bin')
     | append ($env.DEVKITPRO | path join 'tools/bin')
     | append ($env.DEVKITARM | path join 'bin')
