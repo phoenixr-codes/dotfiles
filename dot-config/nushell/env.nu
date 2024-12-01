@@ -103,6 +103,9 @@ $env.TMPDIR = $nu.temp-path
 $env.ANDROID_HOME = ($nu.home-path | path join 'Android/Sdk')
 $env.NDK_HOME = ($nu.home-path | path join 'Android/Ndk')
 
+$env.WASI_SDK_PATH = ($nu.home-path | path join 'wasi/wasi-sdk')
+$env.WASMTIME_HOME = ($nu.home-path | path join '.wasmtime')
+
 $env.DEVKITPRO = '/opt/devkitpro'
 $env.DEVKITARM = '/opt/devkitpro/devkitARM'
 $env.DEVKITPPC = '/opt/devkitpro/devkitPPC'
@@ -113,6 +116,7 @@ $env.PATH = (
     | append '/usr/local/flutter/bin'
     | append '/usr/local/texlive/2024/bin/x86_64-linux'
     | append ($env.ANDROID_HOME | path join 'platform-tools')
+    | append ($env.WASMTIME_HOME | path join 'bin')
     | append ($nu.home-path | path join '.local/bin')
     | append ($nu.home-path | path join '.nimble/bin')
     | append ($nu.home-path | path join '.bun/bin')
