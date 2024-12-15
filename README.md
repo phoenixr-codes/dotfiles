@@ -1,5 +1,7 @@
 # dotfiles
 
+![Preview](./Preview/screenshot-01.png)
+
 ## Install
 
 ```shell
