@@ -123,7 +123,7 @@ $env.PATH = (
     | append ($nu.home-path | path join '.deno/bin')
     | append ($nu.home-path | path join '.local/share/gem/ruby/3.2.0/bin')
     | append ($nu.home-path | path join 'Projects/Odin/')
-    | append ($nu.home-path | path join 'Programs/roc_nightly-linux_x86_64-2024-10-02-aaeefc0')
+    | append ($nu.home-path | path join 'Programs/roc_nightly-linux_x86_64-2024-11-29-d72da8e')
     | append ($nu.home-path | path join 'Programs/clion-2024.2.2/bin')
     | append ($nu.home-path | path join 'Projects/ols/')
     | append ($nu.home-path | path join 'Projects/wi/')
