@@ -115,22 +115,25 @@ $env.PATH = (
     | split row (char esep)
     | append '/usr/local/flutter/bin'
     | append '/usr/local/texlive/2024/bin/x86_64-linux'
-    | append ($env.ANDROID_HOME | path join 'platform-tools')
-    | append ($env.WASMTIME_HOME | path join 'bin')
+    | append '/usr/local/v'
+    | append '/usr/local/Odin'
+    | append '/usr/local/ols'
+    | append '/usr/local/MCCompiledSource/mc-compiled/bin/Release/net9.0'
+    | append '/usr/local/mcpelauncher-extract/build'
     | append ($nu.home-path | path join '.local/bin')
     | append ($nu.home-path | path join '.nimble/bin')
     | append ($nu.home-path | path join '.bun/bin')
     | append ($nu.home-path | path join '.deno/bin')
     | append ($nu.home-path | path join '.local/share/gem/ruby/3.2.0/bin')
-    | append ($nu.home-path | path join 'Projects/Odin/')
     | append ($nu.home-path | path join 'Programs/roc_nightly-linux_x86_64-2024-11-29-d72da8e')
     | append ($nu.home-path | path join 'Programs/clion-2024.2.2/bin')
-    | append ($nu.home-path | path join 'Projects/ols/')
     | append ($nu.home-path | path join 'Projects/wi/')
-    | append ($nu.home-path | path join 'Projects/MCCompiledSource/mc-compiled/bin/Release/net9.0/')
     | append ($nu.home-path | path join '.local/share/gem/ruby/3.0.0/bin')
     | append ($env.DEVKITPRO | path join 'tools/bin')
     | append ($env.DEVKITARM | path join 'bin')
+    | append ($env.ANDROID_HOME | path join 'platform-tools')
+    | append ($env.WASMTIME_HOME | path join 'bin')
+
 )
 
 if ("~/.config/nushell/secrets.nu" | path exists) {
@@ -138,7 +141,7 @@ if ("~/.config/nushell/secrets.nu" | path exists) {
 }
 
 if (which nvim | is-not-empty) {
-    $env.EDITOR = "nvim"
+  $env.EDITOR = "nvim"
 } else if (which hx | is-not-empty) {
   $env.EDITOR = "hx"
 }
