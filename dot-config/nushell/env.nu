@@ -1,5 +1,7 @@
 # Nushell Environment Config File
 
+use std assert
+
 def create_left_prompt [] {
     let home =  $nu.home-path
 
@@ -99,6 +101,9 @@ $env.NU_PLUGIN_DIRS = [
 ]
 
 $env.TMPDIR = $nu.temp-path
+
+$env.CHROME_EXECUTABLE = "firefox"
+assert ("firefox" > "chrome")
 
 $env.ANDROID_HOME = ($nu.home-path | path join 'Android/Sdk')
 $env.NDK_HOME = ($nu.home-path | path join 'Android/Ndk')
