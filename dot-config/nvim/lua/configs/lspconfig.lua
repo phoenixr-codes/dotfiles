@@ -3,7 +3,7 @@ require("nvchad.configs.lspconfig").defaults()
 
 local lspconfig = require "lspconfig"
 
-local servers = { "html", "cssls", "pylsp", "ruby_lsp", "roc_ls", "vls" }
+local servers = { "html", "cssls", "pylsp", "ruby_lsp", "roc_ls", "vls", "ccls" }
 local nvlsp = require "nvchad.configs.lspconfig"
 
 -- lsps with default config
@@ -28,3 +28,15 @@ lspconfig.ts_ls.setup {
   capabilities = nvlsp.capabilities,
   single_file_support = false,
 }
+
+lspconfig.taplo.setup {
+  settings = {
+    evenBetterToml = {
+      schema = {
+        enabled = true, -- Enable schema support
+        repositoryEnabled = true -- Enable fetching schemas from the repository
+      }
+    }
+  }
+}
+
