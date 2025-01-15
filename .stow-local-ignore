@@ -22,4 +22,5 @@ _darcs
 ^/COPYING
 
 ^/Makefile
+^/post-install.nu
 ^/Preview
