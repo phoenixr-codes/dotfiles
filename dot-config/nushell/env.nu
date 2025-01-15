@@ -138,10 +138,9 @@ $env.PATH = (
     | append ($env.DEVKITARM | path join 'bin')
     | append ($env.ANDROID_HOME | path join 'platform-tools')
     | append ($env.WASMTIME_HOME | path join 'bin')
-
 )
 
-if ("~/.config/nushell/secrets.nu" | path exists) {
+if ($nu.home-path | path join '.config/nushell/secrets.nu' | path exists) {
   source-env ~/.config/nushell/secrets.nu
 }
 
