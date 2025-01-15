@@ -145,6 +145,8 @@ if ("~/.config/nushell/secrets.nu" | path exists) {
   source-env ~/.config/nushell/secrets.nu
 }
 
+$env.BAT_THEME = "OneHalfDark"
+
 if (which nvim | is-not-empty) {
   $env.EDITOR = "nvim"
 } else if (which hx | is-not-empty) {
