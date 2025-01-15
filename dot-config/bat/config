@@ -1,0 +1,6 @@
+--theme "TwoDark"
+--italic-text "always"
+--style "plain"
+
+--map-syntax "*.lang:INI"
+--map-syntax "*.stow-local-ignore:Regular Expression"

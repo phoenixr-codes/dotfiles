@@ -76,8 +76,6 @@ if ($secrets_path | path exists) {
   source-env $secrets_path
 }
 
-$env.BAT_THEME = "OneHalfDark"
-
 if (which nvim | is-not-empty) {
   $env.EDITOR = "nvim"
 } else if (which hx | is-not-empty) {
