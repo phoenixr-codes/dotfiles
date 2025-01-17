@@ -797,10 +797,7 @@ if (which neofetch | is-not-empty) {
 }
 
 # Theme
-if ("~/nu_scripts/themes/nu-themes/dracula.nu" | path exists) {
-    use ~/nu_scripts/themes/nu-themes/dracula.nu
-    dracula set color_config
-}
+source scripts/themes/nu-themes/dracula.nu
 
 # Starship
 if (which starship | is-not-empty) {
