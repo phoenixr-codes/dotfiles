@@ -46,6 +46,8 @@ $env.DEVKITPRO = '/opt/devkitpro'
 $env.DEVKITARM = '/opt/devkitpro/devkitARM'
 $env.DEVKITPPC = '/opt/devkitpro/devkitPPC'
 
+$env.COM_MOJANG = ($nu.home-path | path join ".local/share/mcpelauncher/games/com.mojang/")
+
 $env.PATH = (
     $env.PATH
     | split row (char esep)
