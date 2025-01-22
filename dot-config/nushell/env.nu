@@ -58,6 +58,7 @@ $env.PATH = (
     | append '/usr/local/ols'
     | append '/usr/local/MCCompiledSource/mc-compiled/bin/Release/net9.0'
     | append '/usr/local/mcpelauncher-extract/build'
+    | append ($nu.home-path | path join '.local/eww/target/release')
     | append ($nu.home-path | path join '.local/bin')
     | append ($nu.home-path | path join '.nimble/bin')
     | append ($nu.home-path | path join '.bun/bin')
