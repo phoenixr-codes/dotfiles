@@ -1,0 +1,24 @@
+source custom-completions/adb/adb-completions.nu
+source custom-completions/bat/bat-completions.nu
+source custom-completions/bitwarden-cli/bitwarden-cli-completions.nu
+source custom-completions/cargo/cargo-completions.nu
+source custom-completions/curl/curl-completions.nu
+source custom-completions/dotnet/dotnet-completions.nu
+source custom-completions/flutter/flutter-completions.nu
+source custom-completions/gh/gh-completions.nu
+source custom-completions/git/git-completions.nu
+source custom-completions/just/just-completions.nu
+source custom-completions/less/less-completions.nu
+source custom-completions/make/make-completions.nu
+source custom-completions/man/man-completions.nu
+source custom-completions/nano/nano-completions.nu
+source custom-completions/npm/npm-completions.nu
+source custom-completions/poetry/poetry-completions.nu
+source custom-completions/pytest/pytest-completions.nu
+source custom-completions/rg/rg-completions.nu
+source custom-completions/rustup/rustup-completions.nu
+source custom-completions/ssh/ssh-completions.nu
+source custom-completions/tar/tar-completions.nu
+source custom-completions/typst/typst-completions.nu
+source custom-completions/yarn/yarn-completions.nu
+

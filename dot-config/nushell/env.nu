@@ -80,6 +80,8 @@ $env.PATH = (
 const secrets_path = ($nu.default-config-dir | path join 'secrets.nu')
 source-env $secrets_path
 
+source completions.nu
+
 if (which nvim | is-not-empty) {
   $env.EDITOR = "nvim"
 } else if (which hx | is-not-empty) {
