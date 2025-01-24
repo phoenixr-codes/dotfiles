@@ -78,6 +78,11 @@ return {
     config = true,
   },
 
+  {
+    "https://github.com/projectfluent/fluent.vim.git",
+    lazy = false,
+  },
+
   -- {
   -- 	"nvim-treesitter/nvim-treesitter",
   -- 	opts = {
