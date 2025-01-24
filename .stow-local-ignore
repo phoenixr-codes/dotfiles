@@ -23,4 +23,5 @@ _darcs
 
 ^/Makefile
 ^/post-install.nu
+^/pyproject.toml
 ^/Preview

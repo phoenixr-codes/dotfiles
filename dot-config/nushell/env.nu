@@ -46,6 +46,8 @@ $env.DEVKITPRO = '/opt/devkitpro'
 $env.DEVKITARM = '/opt/devkitpro/devkitARM'
 $env.DEVKITPPC = '/opt/devkitpro/devkitPPC'
 
+$env.GOBIN = ($nu.home-path | path join '.go/bin')
+
 $env.COM_MOJANG = ($nu.home-path | path join ".local/share/mcpelauncher/games/com.mojang/")
 
 $env.PATH = (
@@ -61,6 +63,7 @@ $env.PATH = (
     | append ($nu.home-path | path join '.local/eww/target/release')
     | append ($nu.home-path | path join '.local/bin')
     | append ($nu.home-path | path join '.nimble/bin')
+    | append ($nu.home-path | path join '.go/bin')
     | append ($nu.home-path | path join '.bun/bin')
     | append ($nu.home-path | path join '.deno/bin')
     | append ($nu.home-path | path join '.local/share/gem/ruby/3.2.0/bin')
