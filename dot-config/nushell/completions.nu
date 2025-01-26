@@ -20,5 +20,5 @@ source custom-completions/rustup/rustup-completions.nu
 source custom-completions/ssh/ssh-completions.nu
 source custom-completions/tar/tar-completions.nu
 source custom-completions/typst/typst-completions.nu
-source custom-completions/yarn/yarn-completions.nu
+source custom-completions/yarn/yarn-v4-completions.nu
 
