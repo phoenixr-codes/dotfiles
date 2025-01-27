@@ -4,3 +4,5 @@
 
 --map-syntax "*.lang:INI"
 --map-syntax "*.stow-local-ignore:Regular Expression"
+--map-syntax "*.rhai:JavaScript"
+
