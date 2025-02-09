@@ -83,13 +83,30 @@ return {
     lazy = false,
   },
 
-  -- {
-  -- 	"nvim-treesitter/nvim-treesitter",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"vim", "lua", "vimdoc",
-  --      "html", "css"
-  -- 		},
-  -- 	},
-  -- },
+  {
+    "https://github.com/windwp/nvim-ts-autotag.git",
+    lazy = false, -- This plugin is already lazy
+  },
+
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "vim",
+        "lua",
+        "vimdoc",
+        "html",
+        "css",
+      },
+    },
+  },
+
+  {
+    "https://github.com/amber-lang/amber-vim.git",
+    lazy = false,
+  },
+
+  {
+    "b0o/schemastore.nvim",
+  },
 }

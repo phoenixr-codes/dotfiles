@@ -1,5 +1,7 @@
+# {% if SYSTEM.platform != "Android" %}
 [[battery.display]]
 threshold = 15
+# {% end %}
 
 [aws]
 symbol = "  "

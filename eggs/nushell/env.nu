@@ -80,16 +80,10 @@ $env.PATH = (
 const secrets_path = ($nu.default-config-dir | path join 'secrets.nu')
 source-env $secrets_path
 
-source completions.nu
-
 if (which nvim | is-not-empty) {
   $env.EDITOR = "nvim"
 } else if (which hx | is-not-empty) {
   $env.EDITOR = "hx"
-}
-
-if ($env.ON_ANDROID) {
-  $env.STARSHIP_CONFIG = ($nu.home-path | path join '.config/starship-android.toml')
 }
 
 do {
@@ -103,7 +97,7 @@ do {
   if $motd_is_old {
     try {
       # do not make a request in case we have no wifi
-      let motd = (http get --max-time 2 https://zenquotes.io/api/random/ | first)
+      let motd = (http get --max-time 2sec https://zenquotes.io/api/random/ | first)
       $"($motd.q)\n~ ($motd.a)" | save -f ($nu.home-path | path join $motd_path)
     }
   }

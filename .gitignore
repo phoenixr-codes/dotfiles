@@ -1,0 +1,8 @@
+/.git
+/.deployed_cache
+/.mypy_cache
+
+/eggs/nushell/history.txt
+/eggs/nushell/secrets.nu
+
+/eggs/kitty/kitty.conf.bak

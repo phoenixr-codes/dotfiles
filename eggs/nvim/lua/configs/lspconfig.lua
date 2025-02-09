@@ -15,6 +15,15 @@ for _, lsp in ipairs(servers) do
   }
 end
 
+lspconfig.jsonls.setup {
+  settings = {
+    json = {
+      schemas = require("schemastore").json.schemas(),
+      validate = { enable = true },
+    },
+  },
+}
+
 lspconfig.denols.setup {
   on_attach = nvlsp.on_attach,
   on_init = nvlsp.on_init,
@@ -24,7 +33,7 @@ lspconfig.denols.setup {
 lspconfig.ts_ls.setup {
   on_attach = nvlsp.on_attach,
   on_init = nvlsp.on_init,
-  root_dir = lspconfig.util.root_pattern("package.json"),
+  root_dir = lspconfig.util.root_pattern "package.json",
   capabilities = nvlsp.capabilities,
   single_file_support = false,
 }
@@ -34,9 +43,8 @@ lspconfig.taplo.setup {
     evenBetterToml = {
       schema = {
         enabled = true, -- Enable schema support
-        repositoryEnabled = true -- Enable fetching schemas from the repository
-      }
-    }
-  }
+        repositoryEnabled = true, -- Enable fetching schemas from the repository
+      },
+    },
+  },
 }
-

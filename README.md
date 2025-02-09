@@ -1,12 +1,20 @@
 # dotfiles
 
-![Preview](./Preview/screenshot-01.png)
+## Requirements
 
-## Install
+- [Yolk][]
 
-```shell
-git clone https://github.com/phoenixr-codes/dotfiles.git
-cd dotfiles
-make
-./post-install.nu
+## Installation
+
+```console
+git clone https://github.com/phoenixr-codes/dotfiles ~/.config/yolk
 ```
+
+## Sync
+
+```console
+yolk sync
+```
+
+[Yolk]: https://elkowar.github.io/yolk/
+
