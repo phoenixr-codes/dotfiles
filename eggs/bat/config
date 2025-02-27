@@ -3,6 +3,7 @@
 --style "plain"
 
 --map-syntax "*.lang:INI"
+--map-syntax "allay.lock:TOML"
 --map-syntax "*.stow-local-ignore:Regular Expression"
 --map-syntax "*.rhai:JavaScript"
 
