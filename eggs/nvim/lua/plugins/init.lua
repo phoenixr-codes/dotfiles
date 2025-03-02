@@ -5,7 +5,6 @@ return {
     opts = require "configs.conform",
   },
 
-  -- These are some examples, uncomment them if you want to see them work!
   {
     "neovim/nvim-lspconfig",
     config = function()
@@ -120,5 +119,20 @@ return {
       }
     end,
     lazy = false,
+  },
+
+  { "nvzone/volt", lazy = true },
+
+  {
+    "nvzone/minty",
+    cmd = { "Shades", "Huefy" },
+  },
+
+  {
+    "nvzone/showkeys",
+    cmd = "ShowkeysToggle",
+    opts = {
+      maxkeys = 5,
+    },
   },
 }
