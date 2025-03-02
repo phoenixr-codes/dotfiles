@@ -6,6 +6,7 @@ local options = {
     typescript = { "prettier" },
     javascript = { "prettier" },
     python = { "ruff" },
+    nim = { "nimpretty" },
   },
 
   -- format_on_save = {
