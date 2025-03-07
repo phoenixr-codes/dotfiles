@@ -1,14 +1,16 @@
 // vim: set syntax=javascript :
 export let data = #{
     for_vcs: LOCAL,
+    theme: "Catppuccin Mocha",
 };
 export let eggs = #{
     bat: #{ targets: "~/.config/bat" },
+    chadwm: #{ targets: "~/.config/chadwm" },
     nvim: #{ targets: "~/.config/nvim" },
     neofetch: #{ targets: "~/.config/neofetch" },
     rofi: #{ targets: "~/.config/rofi" },
     kitty: #{ targets: "~/.config/kitty" },
     mklicense: #{ targets: "~/.config/mklicense" },
-    nushell: #{ targets: "~/.config/nushell" },
+    nushell: #{ targets: "~/.config/nushell", templates: ["config.nu"] },
     starship: #{ targets: #{ "starship.toml": "~/.config/starship.toml" }, templates: ["starship.toml"] },
 };
