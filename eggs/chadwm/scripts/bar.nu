@@ -25,9 +25,9 @@ export def updates [] {
   let updates = (try { timeout 20 checkupdates err>|null | lines | length } catch { 0 })
 
   if ($updates > 0) {
-    $"(fg $green)  ($updates) updates"
+    $"(fg $green)   ($updates) updates"
   } else {
-    $"(fg $green)  Fully Updated"
+    $"(fg $green)   Fully Updated"
   }
 }
 

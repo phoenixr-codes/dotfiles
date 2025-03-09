@@ -9,8 +9,8 @@ export let eggs = #{
     nvim: #{ targets: "~/.config/nvim" },
     neofetch: #{ targets: "~/.config/neofetch" },
     rofi: #{ targets: "~/.config/rofi" },
-    kitty: #{ targets: "~/.config/kitty" },
+    kitty: #{ targets: "~/.config/kitty", strategy: "merge" },
     mklicense: #{ targets: "~/.config/mklicense" },
-    nushell: #{ targets: "~/.config/nushell", templates: ["config.nu"] },
+    nushell: #{ targets: "~/.config/nushell", templates: ["config.nu"], strategy: "merge" },
     starship: #{ targets: #{ "starship.toml": "~/.config/starship.toml" }, templates: ["starship.toml"] },
 };
