@@ -18,7 +18,7 @@ def reset [] {
 export def cpu [] {
   let value = (grep -o "^[^ ]*" /proc/loadavg)
 
-  $"(fg $black)(bg $darkblue)  (fg $black)(bg $blue) ($value) (reset)"
+  $"(fg $black)(bg $blue)  (fg $black)(bg $lavender) ($value) (reset)"
 }
 
 export def updates [] {
@@ -35,35 +35,51 @@ export def battery [] {
   let capacity = (open /sys/class/power_supply/BAT0/capacity | into int)
 
   if ($capacity < 10) {
-    $"(fg $red)(bg $black)   (fg $black)(bg $red) ($capacity)% (reset)"
+    $"(fg $black)(bg $red)   (reset)(fg $white) ($capacity)% (reset)"
   } else {
-    $"(fg $black)(bg $darkblue)   (fg $black)(bg $blue) ($capacity)% (reset)"
+    $"(fg $black)(bg $green)   (reset)(fg $white) ($capacity)% (reset)"
   }
 }
 
 export def brightness [] {
-  let capacity = $"((open /sys/class/backlight/intel_backlight/actual_brightness | into int) / (open /sys/class/backlight/intel_backlight/max_brightness | into int) * 100 | math round)%"
+  let brightness = $"((open /sys/class/backlight/intel_backlight/actual_brightness | into int) / (open /sys/class/backlight/intel_backlight/max_brightness | into int) * 100 | math round)%"
 
-  $"(fg $black)(bg $darkblue)  (fg $black)(bg $blue) ($capacity) (reset)"
+  $"(fg $black)(bg $peach) 󰖨 (reset)(fg $white) ($brightness) (reset)"
+}
+
+export def volume [] {
+  let volume = (pactl --format=json list sinks | from json | last)
+  let percent = ($volume.volume.front-left.value_percent | str replace "%" "" | into int)
+  mut icon = ""
+  if ($volume.mute) {
+    $icon = " "
+  } else if ($percent == 0) {
+    $icon = " "
+  } else if ($percent in 1..50) {
+    $icon = " "
+  } else {
+    $icon = " "
+  }
+  $"(fg $black)(bg $pink) ($icon)(reset)(fg $white) ($percent)% (reset)"
 }
 
 export def mem [] {
-  $"(fg $black)(bg $darkblue)  (fg $black)(bg $blue) (free -h | awk '/^Mem/ { print $3 }' | sed s/i//g) (reset)"
+  $"(fg $black)(bg $blue)  (reset)(fg $white) (free -h | awk '/^Mem/ { print $3 }' | sed s/i//g) (reset)"
 }
 
 export def wlan [] {
 	match (open /sys/class/net/wl*/operstate | str trim) {
-	  "up" => $"(fg $black)(bg $darkblue) 󰤨 (fg $black)(bg $blue) Connected (reset)"
-	  "down" => $"(fg $black)(bg $darkblue) 󰤭 (fg $black)(bg $blue) Disconnected (reset)"
+	  "up" => $"(fg $black)(bg $sapphire) 󰤨 (reset)(fg $white) Connected (reset)"
+	  "down" => $"(fg $black)(bg $sapphire) 󰤭 (reset)(fg $white) Disconnected (reset)"
   }
 }
 
 export def clock [] {
-  $"(fg $black)(bg $darkblue) 󱑆 (fg $black)(bg $blue) (date now | format date '%H:%M') (reset)"
+  $"(fg $black)(bg $flamingo) 󱑆 (fg $black)(bg $rosewater) (date now | format date '%H:%M') (reset)"
 }
 
 export def datetime [] {
-  $"(fg $black)(bg $darkblue) 󰃭 (fg $black)(bg $blue) (date now | format date '%a, %d.%m') (reset)"
+  $"(fg $black)(bg $flamingo) 󰃭 (fg $black)(bg $rosewater) (date now | format date '%a, %d.%m') (reset)"
 }
 
 mut interval = 0
@@ -72,7 +88,7 @@ loop {
   if ($interval == 0 or $interval mod 3600 == 0) {
     $updates = updates
   }
-  xsetroot -name $"   ($updates) (battery) (brightness) (cpu) (mem) (wlan) (datetime) (clock)"
+  xsetroot -name $"   ($updates) (battery) (brightness) (volume) (wlan) (datetime) (clock)"
   sleep 1sec
   $interval += 1
 }
