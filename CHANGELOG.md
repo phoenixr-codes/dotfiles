@@ -4,6 +4,10 @@
 
 - Use `merge` strategy for Nushell and kitty config.
 - Only change kitty theme in `config.nu` when kitty executable is available.
+- Improved README installation instructions.
+- Added cargo binaries to `PATH`.
+- Fixed eww issue with dwm.
+- Fixed wlan panel in bar in dwm.
 
 ## 2025-03-07
 

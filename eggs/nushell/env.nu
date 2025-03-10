@@ -58,13 +58,14 @@ $env.PATH = (
   | append '/usr/local/flutter/bin'
   | append '/usr/local/texlive/2024/bin/x86_64-linux'
   | append '/usr/local/v'
+  | append '/usr/local/eww/target/release'
   | append '/usr/local/Odin'
   | append '/usr/local/ols'
   | append '/usr/local/MCCompiledSource/mc-compiled-language-server/bin/Release/net9.0'
   | append '/usr/local/mcpelauncher-extract/build'
-  | append ($nu.home-path | path join '.local/eww/target/release')
   | append ($nu.home-path | path join '.local/bin')
   | append ($nu.home-path | path join '.nimble/bin')
+  | append ($nu.home-path | path join '.cargo/bin')
   | append ($nu.home-path | path join '.go/bin')
   | append ($nu.home-path | path join '.bun/bin')
   | append ($nu.home-path | path join '.deno/bin')

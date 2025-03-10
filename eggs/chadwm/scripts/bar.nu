@@ -52,7 +52,7 @@ export def mem [] {
 }
 
 export def wlan [] {
-	match (open /sys/class/net/wl*/operstate) {
+	match (open /sys/class/net/wl*/operstate | str trim) {
 	  "up" => $"(fg $black)(bg $darkblue) 󰤨 (fg $black)(bg $blue) Connected (reset)"
 	  "down" => $"(fg $black)(bg $darkblue) 󰤭 (fg $black)(bg $blue) Disconnected (reset)"
   }
