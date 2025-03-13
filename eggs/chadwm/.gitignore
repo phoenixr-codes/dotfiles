@@ -1,7 +1,0 @@
-chadwm/dwm 
-chadwm/*.o
-chadwm/*.orig
-chadwm/*.rej
-.ccls-cache/
-setup*
-up.sh

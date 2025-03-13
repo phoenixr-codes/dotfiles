@@ -1,5 +1,10 @@
 # Changelog
 
+## 2025-03-13
+
+- Added `pest` file type detection.
+- Removed most `dwm` files.
+
 ## 2025-03-10
 
 - Use `merge` strategy for Nushell and kitty config.
@@ -19,4 +24,4 @@
 - Improved `keybindings.nu`.
 - Use bat for man.
 - Introduced this changelog.
-
+- Configure emoji selection apps to float in dwm.

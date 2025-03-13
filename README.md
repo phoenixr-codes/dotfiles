@@ -22,6 +22,7 @@ yolk sync
 
 ## TODO
 
+- [x] Only include `config.h` of dwm.
 - [ ] Add eww configurations.
 - [ ] Fix eww font and gap issue.
 - [ ] Fix font in dwm bar.
