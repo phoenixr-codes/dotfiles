@@ -88,7 +88,8 @@ static const Rule rules[] = {
     /* class                 instance               title  tags mask  iscentered  isfloating   monitor */
     { "firefox",             "Navigator",           NULL,  1 << 1,    0,          0,           -1 },
     { "mcpelauncher-client", "mcpelauncher-client", NULL,  1 << 2,    0,          0,           -1 },
-    { "eww",                  NULL,                 NULL,  0,         0,          1,           -1 },
+    { "eww",                 NULL,                  NULL,  0,         0,          1,           -1 },
+    { "smile",               NULL,                  NULL,  0,         1,          1,           -1 },
 };
 
 /* layout(s) */
@@ -151,7 +152,8 @@ static const Key keys[] = {
 
     // apps
     { MODKEY,                           XK_c,       spawn,          SHCMD("rofi -show drun") },
-    { MODKEY,                           XK_Return,  spawn,          SHCMD("kitty")},
+    { MODKEY,                           XK_Return,  spawn,          SHCMD("kitty") },
+    { MODKEY,                           XK_period,  spawn,          SHCMD("flatpak run it.mijorus.smile") },
 
     // toggle stuff
     { MODKEY,                           XK_b,       togglebar,      {0} },
@@ -213,14 +215,8 @@ static const Key keys[] = {
     { MODKEY|ControlMask,               XK_g,       setlayout,      {.v = &layouts[10]} },
     { MODKEY|ControlMask|ShiftMask,     XK_t,       setlayout,      {.v = &layouts[13]} },
     { MODKEY,                           XK_space,   setlayout,      {0} },
-    { MODKEY|ControlMask,               XK_comma,   cyclelayout,    {.i = -1 } },
-    { MODKEY|ControlMask,               XK_period,  cyclelayout,    {.i = +1 } },
     { MODKEY,                           XK_0,       view,           {.ui = ~0 } },
     { MODKEY|ShiftMask,                 XK_0,       tag,            {.ui = ~0 } },
-    { MODKEY,                           XK_comma,   focusmon,       {.i = -1 } },
-    { MODKEY,                           XK_period,  focusmon,       {.i = +1 } },
-    { MODKEY|ShiftMask,                 XK_comma,   tagmon,         {.i = -1 } },
-    { MODKEY|ShiftMask,                 XK_period,  tagmon,         {.i = +1 } },
 
     // change border size
     { MODKEY|ShiftMask,                 XK_minus,   setborderpx,    {.i = -1 } },

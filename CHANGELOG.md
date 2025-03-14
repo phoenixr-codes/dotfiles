@@ -3,6 +3,8 @@
 ## 2025-03-14
 
 - Added shebang to `starship.nu`.
+- Improved battery display in dwm bar.
+- Configured dwm to open emoji selector when <kbd>Super</kbd> + <kbd>.</kbd> is pressed.
 
 ## 2025-03-13
 
@@ -28,4 +30,3 @@
 - Improved `keybindings.nu`.
 - Use bat for man.
 - Introduced this changelog.
-- Configure emoji selection apps to float in dwm.
