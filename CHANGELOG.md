@@ -1,5 +1,9 @@
 # Changelog
 
+## 2025-03-14
+
+- Added shebang to `starship.nu`.
+
 ## 2025-03-13
 
 - Added `pest` file type detection.

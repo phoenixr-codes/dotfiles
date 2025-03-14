@@ -32,13 +32,24 @@ export def updates [] {
 }
 
 export def battery [] {
+  let charging = (open /sys/class/power_supply/BAT0/status | str trim) == "Charging"
   let capacity = (open /sys/class/power_supply/BAT0/capacity | into int)
 
-  if ($capacity < 10) {
-    $"(fg $black)(bg $red)   (reset)(fg $white) ($capacity)% (reset)"
-  } else {
-    $"(fg $black)(bg $green)   (reset)(fg $white) ($capacity)% (reset)"
+  let display = match $capacity {
+    100  => {icon: {normal: "󰁹", charging: "󰂅"}, color: $green},
+    90.. => {icon: {normal: "󰂂", charging: "󰂋"}, color: $green},
+    80.. => {icon: {normal: "󰂁", charging: "󰂊"}, color: $green},
+    70.. => {icon: {normal: "󰂀", charging: "󰢞"}, color: $green},
+    60.. => {icon: {normal: "󰁿", charging: "󰂉"}, color: $green},
+    50.. => {icon: {normal: "󰁾", charging: "󰢝"}, color: $green},
+    40.. => {icon: {normal: "󰁽", charging: "󰂈"}, color: $green},
+    30.. => {icon: {normal: "󰁼", charging: "󰂇"}, color: $green},
+    20.. => {icon: {normal: "󰁻", charging: "󰂆"}, color: $peach},
+    10.. => {icon: {normal: "󰁺", charging: "󰢜"}, color: $red},
+    _    => {icon: {normal: "󰂎", charging: "󰢟"}, color: $red}
   }
+
+  $"(fg $display.color) (if $charging { $display.icon.charging } else { $display.icon.normal }) (reset)(fg $white) ($capacity)% (reset)"
 }
 
 export def brightness [] {

@@ -28,9 +28,9 @@ yolk sync
 - [ ] Fix font in dwm bar.
 - [x] Apply different colors to panels on dwm bar (again).
 - [x] Add audio level/muted to dwm bar.
-- [ ] Different battery icon depending on percentage.
-- [ ] Improve colors in dwm bar.
-- [ ] Remove CPU and memory from dwm bar.
+- [x] Different battery icon depending on percentage.
+- [x] Improve colors in dwm bar.
+- [x] Remove CPU and memory from dwm bar.
 
 [Yolk]: https://elkowar.github.io/yolk/
 
