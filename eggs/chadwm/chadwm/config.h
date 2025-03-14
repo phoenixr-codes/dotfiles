@@ -147,9 +147,9 @@ static const Key keys[] = {
 
     // screenshot fullscreen and cropped
     {MODKEY|ControlMask,                XK_Print,   spawn,
-        SHCMD("maim ~/Downloads/$(date '+Screenshot_%Y-%m-%d_%H-%M-%S')")},
+        SHCMD("maim ~/Downloads/$(date '+Screenshot_%Y-%m-%d_%H-%M-%S.png')")},
     {MODKEY,                            XK_Print,   spawn,
-        SHCMD("maim --select ~/Downloads/$(date '+Screenshot_%Y-%m-%d_%H-%M-%S')")},
+        SHCMD("maim --select ~/Downloads/$(date '+Screenshot_%Y-%m-%d_%H-%M-%S.png')")},
 
     // apps
     { MODKEY,                           XK_c,       spawn,          SHCMD("rofi -show drun") },
