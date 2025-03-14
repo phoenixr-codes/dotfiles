@@ -7,19 +7,19 @@ use keybindings.nu
 # {% if data.theme == "Palenight" %}
 #<yolk> use themes/palenight.nu
 #<yolk> if (which kitten | is-not-empty) {
-  #<yolk> kitten themes palenight
+  #<yolk> try { kitten themes palenight }
 #<yolk> }
 # {% end %}
 # {% if data.theme == "Catppuccin Frappe" %}
 #<yolk> use themes/catppuccin_frappe.nu
 #<yolk> if (which kitten | is-not-empty) {
-  #<yolk> kitten themes Catppuccin-Frappe
+  #<yolk> try { kitten themes Catppuccin-Frappe }
 #<yolk> }
 # {% end %}
 # {% if data.theme == "Catppuccin Mocha" %}
 use themes/catppuccin_mocha.nu
 if (which kitten | is-not-empty) {
-  kitten themes Catppuccin-Mocha
+  try { kitten themes Catppuccin-Mocha }
 }
 # {% end %}
 

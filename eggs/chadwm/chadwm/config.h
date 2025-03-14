@@ -90,6 +90,7 @@ static const Rule rules[] = {
     { "mcpelauncher-client", "mcpelauncher-client", NULL,  1 << 2,    0,          0,           -1 },
     { "eww",                 NULL,                  NULL,  0,         0,          1,           -1 },
     { "smile",               NULL,                  NULL,  0,         1,          1,           -1 },
+    { "localsend",           NULL,                  NULL,  0,         1,          1,           -1 },
 };
 
 /* layout(s) */
@@ -145,10 +146,10 @@ static const Key keys[] = {
 	  {0,				      XF86XK_MonBrightnessDown,   spawn,	  {.v = light_down}},
 
     // screenshot fullscreen and cropped
-    {MODKEY|ControlMask,                XK_u,       spawn,
-        SHCMD("maim | xclip -selection clipboard -t image/png")},
-    {MODKEY,                            XK_u,       spawn,
-        SHCMD("maim --select | xclip -selection clipboard -t image/png")},
+    {MODKEY|ControlMask,                XK_Print,   spawn,
+        SHCMD("maim ~/Downloads/$(date '+Screenshot_%Y-%m-%d_%H-%M-%S')")},
+    {MODKEY,                            XK_Print,   spawn,
+        SHCMD("maim --select ~/Downloads/$(date '+Screenshot_%Y-%m-%d_%H-%M-%S')")},
 
     // apps
     { MODKEY,                           XK_c,       spawn,          SHCMD("rofi -show drun") },

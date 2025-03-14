@@ -22,6 +22,7 @@ yolk sync
 
 ## TODO
 
+- [ ] Bind fn keys.
 - [ ] Configure emoji selection apps and localsend to float in dwm.
 - [x] Only include `config.h` of dwm.
 - [ ] Add eww configurations.

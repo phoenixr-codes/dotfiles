@@ -1,10 +1,15 @@
 # Changelog
 
+## 2025-03-15
+
+- Changed screenshot key from <kbd>u</kbd> to <kbd>Print</kbd> and save it instead of copying it.
+
 ## 2025-03-14
 
 - Added shebang to `starship.nu`.
 - Improved battery display in dwm bar.
 - Configured dwm to open emoji selector when <kbd>Super</kbd> + <kbd>.</kbd> is pressed.
+- Put `kitten themes` in `try` blocks as it makes use of network.
 
 ## 2025-03-13
 
