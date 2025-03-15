@@ -1,1 +1,10 @@
+*.yaml linguist-detectable
+*.yml linguist-detectable
+
+*tmTheme linguist-detectable
+
+*.json linguist-detectable
+*.jsonc linguist-detectable
+
+*.toml linguist-detectable
 
