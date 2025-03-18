@@ -2,6 +2,7 @@
 
 ## 2025-03-18
 
+- Added theme to starship.
 - Added Nushell completions.
 - Fixed issue with updates in dwm bar.
 - Use git submodule for nu completions and themes.

@@ -22,6 +22,7 @@ yolk sync
 
 ## TODO
 
+- [x] Starship theme.
 - [x] Make use of git submodules for themes provided by GitHub repositories for example.
 - [x] Don't require Super key for function keys in dwm.
 - [x] Move non-config and non-env stuff to a `init.nu` file which will be invoked by `config.nu`.
