@@ -2,8 +2,10 @@
 
 ## 2025-03-18
 
+- Added Nushell completions.
 - Fixed issue with updates in dwm bar.
-- Used git submodule for nu completions and themes.
+- Use git submodule for nu completions and themes.
+- Use git submodule for bat themes.
 
 ## 2025-03-16
 

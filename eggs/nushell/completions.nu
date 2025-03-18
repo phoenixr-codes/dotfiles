@@ -1,7 +1,7 @@
 #!/usr/bin/env nu
 
 source scripts/custom-completions/adb/adb-completions.nu
-source scripts/custom-completions/bat/bat-completions.nu
+#source scripts/custom-completions/bat/bat-completions.nu
 source scripts/custom-completions/bitwarden-cli/bitwarden-cli-completions.nu
 source scripts/custom-completions/cargo/cargo-completions.nu
 source scripts/custom-completions/curl/curl-completions.nu

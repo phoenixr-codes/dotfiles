@@ -1,3 +1,6 @@
-[submodule "eggs/nushell/scripts"]
+[submodule "eggs/nushell/script"]
 	path = eggs/nushell/scripts
 	url = https://github.com/nushell/nu_scripts.git
+[submodule "eggs/bat/themes-catppuccin"]
+	path = eggs/bat/themes-catppuccin
+	url = https://github.com/catppuccin/bat.git

@@ -7,7 +7,7 @@
 ## Installation
 
 ```nushell
-git clone https://github.com/phoenixr-codes/dotfiles ~/.config/yolk;
+git clone --recurive-submodules https://github.com/phoenixr-codes/dotfiles ~/.config/yolk;
 mkdir ~/.config/nushell;
 touch ~/.config/nushell/secrets.nu;
 yolk safeguard;
@@ -22,10 +22,9 @@ yolk sync
 
 ## TODO
 
-- [ ] Added Nushell completions.
-- [ ] Make use git submodules for themes provided by GitHub repositories for example.
+- [x] Make use git submodules for themes provided by GitHub repositories for example.
 - [ ] Don't require Super key for function keys in dwm.
-- [ ] Move non-config and non-env stuff to a `init.nu` file which will be invoked by `config.nu`.
+- [x] Move non-config and non-env stuff to a `init.nu` file which will be invoked by `config.nu`.
 - [ ] Log out after a while when screen is off or when lock button is pressed `dm-tool switch-to-greeter`.
 - [ ] The `x` alias does not expand paths (e.g. `x ~/foo`).
 - [x] Fix issue with pkg updates in dwm bar.
