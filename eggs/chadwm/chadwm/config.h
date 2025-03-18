@@ -146,10 +146,13 @@ static const Key keys[] = {
 	  {0,				      XF86XK_MonBrightnessDown,   spawn,	  {.v = light_down}},
 
     // screenshot fullscreen and cropped
-    {MODKEY|ControlMask,                XK_Print,   spawn,
+    {ControlMask,                       XK_Print,   spawn,
         SHCMD("maim ~/Downloads/$(date '+Screenshot_%Y-%m-%d_%H-%M-%S.png')")},
-    {MODKEY,                            XK_Print,   spawn,
+    {0,                                 XK_Print,   spawn,
         SHCMD("maim --select ~/Downloads/$(date '+Screenshot_%Y-%m-%d_%H-%M-%S.png')")},
+
+    // lock
+    {0,                                 XK_F10,     spawn,          SHCMD("dm-tool switch-to-greeter") },
 
     // apps
     { MODKEY,                           XK_c,       spawn,          SHCMD("rofi -show drun") },

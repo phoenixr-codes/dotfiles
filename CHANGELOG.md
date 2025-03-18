@@ -6,6 +6,8 @@
 - Fixed issue with updates in dwm bar.
 - Use git submodule for nu completions and themes.
 - Use git submodule for bat themes.
+- Function keys don't require Super key anymore.
+- Added lock key for dwm.
 
 ## 2025-03-16
 
