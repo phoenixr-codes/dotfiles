@@ -1,0 +1,25 @@
+#!/usr/bin/env nu
+
+source scripts/custom-completions/adb/adb-completions.nu
+source scripts/custom-completions/bat/bat-completions.nu
+source scripts/custom-completions/bitwarden-cli/bitwarden-cli-completions.nu
+source scripts/custom-completions/cargo/cargo-completions.nu
+source scripts/custom-completions/curl/curl-completions.nu
+source scripts/custom-completions/dotnet/dotnet-completions.nu
+source scripts/custom-completions/flutter/flutter-completions.nu
+source scripts/custom-completions/gh/gh-completions.nu
+source scripts/custom-completions/git/git-completions.nu
+source scripts/custom-completions/just/just-completions.nu
+source scripts/custom-completions/less/less-completions.nu
+source scripts/custom-completions/make/make-completions.nu
+source scripts/custom-completions/man/man-completions.nu
+source scripts/custom-completions/nano/nano-completions.nu
+source scripts/custom-completions/npm/npm-completions.nu
+source scripts/custom-completions/poetry/poetry-completions.nu
+source scripts/custom-completions/pytest/pytest-completions.nu
+source scripts/custom-completions/rg/rg-completions.nu
+source scripts/custom-completions/rustup/rustup-completions.nu
+source scripts/custom-completions/ssh/ssh-completions.nu
+source scripts/custom-completions/tar/tar-completions.nu
+source scripts/custom-completions/typst/typst-completions.nu
+source scripts/custom-completions/yarn/yarn-v4-completions.nu

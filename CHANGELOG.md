@@ -1,5 +1,14 @@
 # Changelog
 
+## 2025-03-18
+
+- Fixed issue with updates in dwm bar.
+- Used git submodule for nu completions and themes.
+
+## 2025-03-16
+
+- Changed V path.
+
 ## 2025-03-15
 
 - Changed screenshot key from <kbd>u</kbd> to <kbd>Print</kbd> and save it instead of copying it.

@@ -5,19 +5,19 @@
 use keybindings.nu
 
 # {% if data.theme == "Palenight" %}
-#<yolk> use themes/palenight.nu
+#<yolk> source scripts/themes/nu-themes/material-palenight.nu
 #<yolk> if (which kitten | is-not-empty) {
   #<yolk> try { kitten themes palenight }
 #<yolk> }
 # {% end %}
 # {% if data.theme == "Catppuccin Frappe" %}
-#<yolk> use themes/catppuccin_frappe.nu
+#<yolk> source scripts/themes/nu-themes/catppuccin-frappe.nu
 #<yolk> if (which kitten | is-not-empty) {
   #<yolk> try { kitten themes Catppuccin-Frappe }
 #<yolk> }
 # {% end %}
 # {% if data.theme == "Catppuccin Mocha" %}
-use themes/catppuccin_mocha.nu
+source scripts/themes/nu-themes/catppuccin-mocha.nu
 if (which kitten | is-not-empty) {
   try { kitten themes Catppuccin-Mocha }
 }
@@ -148,11 +148,5 @@ def --env y [
 	rm -fp $tmp
 }
 
-# Neofetch
-if (which neofetch | is-not-empty) {
-    neofetch
-}
-
-# Starship
-use starship.nu
-
+source init.nu
+source completions.nu

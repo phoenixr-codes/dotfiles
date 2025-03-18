@@ -22,7 +22,7 @@ export def cpu [] {
 }
 
 export def updates [] {
-  let updates = (try { timeout 20 checkupdates err>|null | lines | length } catch { 0 })
+  let updates = (timeout 20 checkupdates | complete | get stdout | lines | length)
 
   if ($updates > 0) {
     $"(fg $green)   ($updates) updates"
