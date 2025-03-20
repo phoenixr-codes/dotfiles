@@ -2,6 +2,9 @@
 
 ## 2025-03-20
 
+- Added bash lsp.
+- Switched to NuShell in neovim.
+- Enabled cursorline in neovim.
 - Added Termux/Android specific configuration.
 - Only launch starship when installed.
 

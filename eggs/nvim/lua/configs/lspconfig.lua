@@ -3,7 +3,7 @@ require("nvchad.configs.lspconfig").defaults()
 
 local lspconfig = require "lspconfig"
 
-local servers = { "html", "cssls", "pylsp", "ruby_lsp", "roc_ls", "vls", "ccls", "marksman", "pest_ls", "nim_langserver" }
+local servers = { "html", "cssls", "pylsp", "ruby_lsp", "roc_ls", "vls", "ccls", "marksman", "pest_ls", "nim_langserver", "bashls" }
 local nvlsp = require "nvchad.configs.lspconfig"
 
 -- lsps with default config
