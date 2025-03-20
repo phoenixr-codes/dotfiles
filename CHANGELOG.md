@@ -1,5 +1,14 @@
 # Changelog
 
+## 2025-03-20
+
+- Added Termux/Android specific configuration.
+- Only launch starship when installed.
+
+## 2025-03-19
+
+- Added invocation of waifufetch when installed.
+
 ## 2025-03-18
 
 - Added theme to starship.

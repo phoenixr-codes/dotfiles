@@ -19,9 +19,13 @@ do {
 }
 
 # Launch neofetch.
-if (which neofetch | is-not-empty) {
-    neofetch
+if (which waifufetch | is-not-empty) {
+  waifufetch
+} else if (which neofetch | is-not-empty) {
+  neofetch
 }
 
 # Launch starship.
-source starship.nu
+if (which starship | is-not-empty) {
+  source starship.nu
+}
