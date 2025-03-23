@@ -78,9 +78,18 @@ export def mem [] {
   $"(fg $black)(bg $blue)  (reset)(fg $white) (free -h | awk '/^Mem/ { print $3 }' | sed s/i//g) (reset)"
 }
 
+def wlan_ssid [] {
+  iw dev wlan0 info
+  | lines
+  | find --regex "ssid"
+  | first
+  | str trim
+  | str replace --regex "^ssid " ""
+}
+
 export def wlan [] {
 	match (open /sys/class/net/wl*/operstate | str trim) {
-	  "up" => $"(fg $black)(bg $sapphire) 󰤨 (reset)(fg $white) Connected (reset)"
+	  "up" => $"(fg $black)(bg $sapphire) 󰤨 (reset)(fg $white) (try { wlan_ssid } catch { "Connected" }) (reset)"
 	  "down" => $"(fg $black)(bg $sapphire) 󰤭 (reset)(fg $white) Disconnected (reset)"
   }
 }

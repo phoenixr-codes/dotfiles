@@ -121,6 +121,7 @@ $env.config = {
 alias disfire = sudo systemctl stop firewalld
 alias rr = java -jar ($nu.home-path | path join Programs rr.war)
 alias mcc = mc-compiled
+alias task = go-task
 if ($env.ON_ANDROID) {
   # Bun does not natively work on Bun so we need to wrap it with `grun`. See also: https://github.com/termux/termux-packages/issues/11188
   if ($nu.home-path | path join ".bun/bin/bun" | path exists) and (which grun | is-not-empty) {

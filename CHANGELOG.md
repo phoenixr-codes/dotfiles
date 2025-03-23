@@ -1,5 +1,13 @@
 # Changelog
 
+## 2025-03-23
+
+- Display SSID when connected to WIFI.
+
+## 2025-03-22
+
+- Added alias for `go-task`.
+
 ## 2025-03-20
 
 - Added bash lsp.

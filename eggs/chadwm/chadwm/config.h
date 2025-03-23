@@ -151,7 +151,9 @@ static const Key keys[] = {
     {0,                                 XK_Print,   spawn,
         SHCMD("maim --select ~/Downloads/$(date '+Screenshot_%Y-%m-%d_%H-%M-%S.png')")},
 
-    // lock
+    // functions
+    // TODO: keybind list on F1
+    // TODO: airplane mode on F8
     {0,                                 XK_F10,     spawn,          SHCMD("dm-tool switch-to-greeter") },
 
     // apps

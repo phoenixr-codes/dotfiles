@@ -22,7 +22,8 @@ yolk sync
 
 ## TODO
 
-- [ ] zenquotes supoort daily api endpoint.
+- [ ] Display weather on terminal launch.
+- [ ] zenquotes support daily api endpoint.
 - [x] Starship theme.
 - [x] Make use of git submodules for themes provided by GitHub repositories for example.
 - [x] Don't require Super key for function keys in dwm.
