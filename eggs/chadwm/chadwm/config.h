@@ -90,7 +90,8 @@ static const Rule rules[] = {
     { "mcpelauncher-client", "mcpelauncher-client", NULL,  1 << 2,    0,          0,           -1 },
     { "eww",                 NULL,                  NULL,  0,         0,          1,           -1 },
     { "smile",               NULL,                  NULL,  0,         1,          1,           -1 },
-    { "localsend",           NULL,                  NULL,  0,         1,          1,           -1 },
+    { "Localsend",           NULL,                  NULL,  0,         1,          1,           -1 },
+    { "Bitwarden",           NULL,                  NULL,  0,         1,          1,           -1 },
 };
 
 /* layout(s) */

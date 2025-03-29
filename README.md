@@ -22,6 +22,7 @@ yolk sync
 
 ## TODO
 
+- [x] Bitwarden in floating mode.
 - [ ] Display weather on terminal launch.
 - [ ] zenquotes support daily api endpoint.
 - [x] Starship theme.
@@ -32,7 +33,7 @@ yolk sync
 - [ ] The `x` alias does not expand paths (e.g. `x ~/foo`).
 - [x] Fix issue with pkg updates in dwm bar.
 - [ ] Bind fn keys.
-- [ ] Configure emoji selection apps and localsend to float in dwm.
+- [x] Configure emoji selection apps and localsend to float in dwm.
 - [x] Only include `config.h` of dwm.
 - [ ] Add eww configurations.
 - [ ] Fix eww font and gap issue.

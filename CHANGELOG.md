@@ -1,5 +1,9 @@
 # Changelog
 
+## 2025-03-29
+
+- Make more windows float in dwm.
+
 ## 2025-03-23
 
 - Display SSID when connected to WIFI.
