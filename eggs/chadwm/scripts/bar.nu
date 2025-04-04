@@ -22,12 +22,14 @@ export def cpu [] {
 }
 
 export def updates [] {
-  let updates = (timeout 20 checkupdates | complete | get stdout | lines | length)
-
-  if ($updates > 0) {
-    $"(fg $green)   ($updates) updates"
-  } else {
-    $"(fg $green)   Fully Updated"
+  let updates_result = (timeout 20 checkupdates | complete)
+  match $updates_result.exit_code {
+    0 => {
+      let updates = ($updates_result | get stdout | lines | length)
+      $"(fg $green)   ($updates) updates"
+    },
+    1 => $"(fg $green)   Updates unknown",
+    2 => $"(fg $green)   Fully Updated"
   }
 }
 

@@ -62,6 +62,7 @@ $env.PATH = (
   | append '/usr/local/ols'
   | append '/usr/local/MCCompiledSource/mc-compiled-language-server/bin/Release/net9.0'
   | append '/usr/local/mcpelauncher-extract/build'
+  | append '/usr/lib/jvm/java-24-openjdk/bin'
   | append ($nu.home-path | path join '.local/bin')
   | append ($nu.home-path | path join '.nimble/bin')
   | append ($nu.home-path | path join '.cargo/bin')
@@ -71,6 +72,7 @@ $env.PATH = (
   | append ($nu.home-path | path join '.local/share/gem/ruby/3.2.0/bin')
   | append ($nu.home-path | path join 'Programs/roc_nightly-linux_x86_64-2024-11-29-d72da8e')
   | append ($nu.home-path | path join 'Programs/clion-2024.2.2/bin')
+  | append ($nu.home-path | path join 'Programs/idea-IU-243.26053.27/bin')
   | append ($nu.home-path | path join 'Projects/wi/')
   | append ($nu.home-path | path join '.local/share/gem/ruby/3.0.0/bin')
   | append ($env.DEVKITPRO | path join 'tools/bin')

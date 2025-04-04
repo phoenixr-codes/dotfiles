@@ -1,5 +1,13 @@
 # Changelog
 
+## 2025-04-04
+
+- Configure Java development.
+
+## 2025-04-01
+
+- Fixed update display when amount is unknown.
+
 ## 2025-03-29
 
 - Make more windows float in dwm.
