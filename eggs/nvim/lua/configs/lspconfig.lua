@@ -3,7 +3,7 @@ require("nvchad.configs.lspconfig").defaults()
 
 local lspconfig = require "lspconfig"
 
-local servers = { "html", "cssls", "pylsp", "ruby_lsp", "roc_ls", "vls", "ccls", "marksman", "pest_ls", "nim_langserver", "bashls", "java_language_server" }
+local servers = { "html", "cssls", "pylsp", "ruby_lsp", "roc_ls", "vls", "ccls", "marksman", "pest_ls", "nim_langserver", "bashls", "tinymist" }
 local nvlsp = require "nvchad.configs.lspconfig"
 
 -- lsps with default config
@@ -14,6 +14,10 @@ for _, lsp in ipairs(servers) do
     capabilities = nvlsp.capabilities,
   }
 end
+
+lspconfig.java_language_server.setup {
+  cmd = { "java-language-server" }
+}
 
 lspconfig.jsonls.setup {
   settings = {

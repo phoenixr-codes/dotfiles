@@ -22,6 +22,7 @@ yolk sync
 
 ## TODO
 
+- [ ] Include umlauts in `nvim-cmp`.
 - [x] Bitwarden in floating mode.
 - [ ] Display weather on terminal launch.
 - [ ] zenquotes support daily api endpoint.

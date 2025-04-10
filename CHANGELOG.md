@@ -1,5 +1,9 @@
 # Changelog
 
+## 2025-04-10
+
+- Updated `.gitattributes`.
+
 ## 2025-04-04
 
 - Configure Java development.

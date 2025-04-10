@@ -1,3 +1,5 @@
+*.nu linguist-language=Nushell
+
 *.yaml linguist-detectable
 *.yml linguist-detectable
 
@@ -8,3 +10,6 @@
 
 *.toml linguist-detectable
 
+kitty/*.conf linguist-language=INI
+
+lazy-lock.json linguist-generated

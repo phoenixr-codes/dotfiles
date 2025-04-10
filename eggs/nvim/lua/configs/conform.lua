@@ -5,6 +5,7 @@ local options = {
     html = { "prettier" },
     typescript = { "prettier" },
     javascript = { "prettier" },
+    java = { "astyle" },
     python = { "ruff" },
     nim = { "nimpretty" },
   },

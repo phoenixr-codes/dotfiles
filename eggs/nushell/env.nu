@@ -63,6 +63,7 @@ $env.PATH = (
   | append '/usr/local/MCCompiledSource/mc-compiled-language-server/bin/Release/net9.0'
   | append '/usr/local/mcpelauncher-extract/build'
   | append '/usr/lib/jvm/java-24-openjdk/bin'
+  | append ($nu.home-path | path join '.local/share/nvim/mason/packages/java-language-server')
   | append ($nu.home-path | path join '.local/bin')
   | append ($nu.home-path | path join '.nimble/bin')
   | append ($nu.home-path | path join '.cargo/bin')
