@@ -1,5 +1,13 @@
 # Changelog
 
+## 2025-04-11
+
+- Add license snippets for neovim.
+- Increased factor when increasing/decreasing light in dwm.
+- Added spell checking in neovim.
+- Added columns in neovim.
+- Added gleam LSP.
+
 ## 2025-04-10
 
 - Updated `.gitattributes`.

@@ -22,6 +22,7 @@ yolk sync
 
 ## TODO
 
+- [ ] Add screenshots to README.
 - [ ] Include umlauts in `nvim-cmp`.
 - [x] Bitwarden in floating mode.
 - [ ] Display weather on terminal launch.
