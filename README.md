@@ -6,8 +6,12 @@
 
 ## Installation
 
+> [!IMPORTANT]
+> You might have to backup or remove some config directories before syncing
+> them.
+
 ```nushell
-git clone --recurive-submodules https://github.com/phoenixr-codes/dotfiles ~/.config/yolk;
+git clone --recurse-submodules https://github.com/phoenixr-codes/dotfiles ~/.config/yolk;
 mkdir ~/.config/nushell;
 touch ~/.config/nushell/secrets.nu;
 yolk safeguard;

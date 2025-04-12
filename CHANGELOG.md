@@ -1,5 +1,11 @@
 # Changelog
 
+## 2025-04-12
+
+- Create `.cache` directory required for `touch`ing `motd.txt`.
+- Fixed README.
+- Added `.hushlogin` for Termux.
+
 ## 2025-04-11
 
 - Add license snippets for neovim.

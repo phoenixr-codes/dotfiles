@@ -13,4 +13,5 @@ export let eggs = #{
     mklicense: #{ targets: "~/.config/mklicense" },
     nushell: #{ targets: "~/.config/nushell", templates: ["config.nu"], strategy: "merge" },
     starship: #{ targets: #{ "starship.toml": "~/.config/starship.toml" }, templates: ["starship.toml"] },
+    hushlogin: #{ targets: #{ ".hushlogin": "~/.hushlogin" }, enabled: SYSTEM.platform == "Android" },
 };
