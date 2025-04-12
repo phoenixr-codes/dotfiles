@@ -3,7 +3,7 @@
 # Fetch a quote each day.
 do {
   let motd_dir = ($nu.home-path | path join ".cache")
-  let motd_path = (motd_path | path join "motd.txt")
+  let motd_path = ($motd_dir | path join "motd.txt")
   let motd_is_old = if ($motd_path | path exists) {
     ((date now) - (ls $motd_path | first).modified) > 1day
   } else {
