@@ -26,6 +26,7 @@ yolk sync
 
 ## TODO
 
+- [ ] Add `de_20` spell file `.spl` for neovim.
 - [ ] Add screenshots to README.
 - [ ] Include umlauts in `nvim-cmp`.
 - [x] Bitwarden in floating mode.

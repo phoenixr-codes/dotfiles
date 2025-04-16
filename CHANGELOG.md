@@ -1,5 +1,10 @@
 # Changelog
 
+## 2025-04-14
+
+- Configured neovim spell checker.
+- Added light and dark theme for neovim.
+
 ## 2025-04-12
 
 - Create `.cache` directory required for `touch`ing `motd.txt`.
