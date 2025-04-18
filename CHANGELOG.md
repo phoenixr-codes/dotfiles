@@ -1,5 +1,10 @@
 # Changelog
 
+## 2025-04-18
+
+- Update Ruby PATH variable.
+- Decreased light factor in dwm.
+
 ## 2025-04-14
 
 - Configured neovim spell checker.
