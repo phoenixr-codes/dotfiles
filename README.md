@@ -24,10 +24,16 @@ yolk sync
 yolk sync
 ```
 
+## Preview
+
+![Terminal preview](./preview/terminal.png)
+
+![Desktop preview](./preview/dekstop.png)
+
 ## TODO
 
 - [x] Add `de_20` spell file `.spl` for neovim.
-- [ ] Add screenshots to README.
+- [x] Add screenshots to README.
 - [ ] Include umlauts in `nvim-cmp`.
 - [x] Bitwarden in floating mode.
 - [ ] Display weather on terminal launch.
