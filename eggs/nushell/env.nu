@@ -71,7 +71,6 @@ $env.PATH = (
   | append ($nu.home-path | path join '.bun/bin')
   | append ($nu.home-path | path join '.deno/bin')
   | append ($nu.home-path | path join '.local/share/gem/ruby/3.3.0/bin')
-  | append ($nu.home-path | path join 'Programs/roc_nightly-linux_x86_64-2024-11-29-d72da8e')
   | append ($nu.home-path | path join 'Programs/clion-2024.2.2/bin')
   | append ($nu.home-path | path join 'Programs/idea-IU-243.26053.27/bin')
   | append ($nu.home-path | path join 'Projects/wi/')
@@ -80,6 +79,15 @@ $env.PATH = (
   | append ($env.ANDROID_HOME | path join 'platform-tools')
   | append ($env.WASMTIME_HOME | path join 'bin')
 )
+
+# Add latest version of roc to PATH.
+try {
+  $env.PATH = (
+    $env.PATH
+    | split row (char esep)
+    | append (ls ~/Programs/roc_nightly-linux_x86_64* | sort-by modified | last | get name)
+  )
+}
 
 const secrets_path = ($nu.default-config-dir | path join 'secrets.nu')
 source-env $secrets_path
