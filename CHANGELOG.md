@@ -1,5 +1,9 @@
 # Changelog
 
+## 2025-04-21
+
+- Improved wallpaper handling for dwm.
+
 ## 2025-04-18
 
 - Update Ruby PATH variable.
