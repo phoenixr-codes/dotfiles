@@ -30,6 +30,8 @@ yolk sync
 
 ![Desktop preview](./preview/dekstop.png)
 
+![Education workflow preview](./preview/education.png)
+
 ## TODO
 
 - [x] Add `de_20` spell file `.spl` for neovim.
