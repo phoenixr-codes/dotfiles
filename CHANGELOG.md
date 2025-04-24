@@ -1,5 +1,9 @@
 # Changelog
 
+## 2025-04-24
+
+- Added memory display to dwm bar.
+
 ## 2025-04-21
 
 - Improved wallpaper handling for dwm.

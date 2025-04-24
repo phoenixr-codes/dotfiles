@@ -77,7 +77,7 @@ export def volume [] {
 }
 
 export def mem [] {
-  $"(fg $black)(bg $blue)  (reset)(fg $white) (free -h | awk '/^Mem/ { print $3 }' | sed s/i//g) (reset)"
+  $"(fg $black)(bg $blue)  (reset)(fg $white) ((sys mem).used)/((sys mem).free) (reset)"
 }
 
 def wlan_ssid [] {
@@ -110,7 +110,7 @@ loop {
   if ($interval == 0 or $interval mod 3600 == 0) {
     $updates = updates
   }
-  xsetroot -name $"   ($updates) (battery) (brightness) (volume) (wlan) (datetime) (clock)"
+  xsetroot -name $"   ($updates) (battery) (brightness) (volume) (mem) (wlan) (datetime) (clock)"
   sleep 1sec
   $interval += 1
 }
