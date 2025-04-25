@@ -1,5 +1,9 @@
 # Changelog
 
+## 2025-04-25
+
+- Fixed memory display in dwm bar.
+
 ## 2025-04-24
 
 - Added memory display to dwm bar.

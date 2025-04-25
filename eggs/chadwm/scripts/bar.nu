@@ -77,7 +77,7 @@ export def volume [] {
 }
 
 export def mem [] {
-  $"(fg $black)(bg $blue)  (reset)(fg $white) ((sys mem).used)/((sys mem).free) (reset)"
+  $"(fg $black)(bg $blue)  (reset)(fg $white) ((sys mem).used)/((sys mem).total) (reset)"
 }
 
 def wlan_ssid [] {
