@@ -1,5 +1,13 @@
 # Changelog
 
+## 2025-04-30
+
+- Improve dwm keybindings.
+
+## 2025-04-28
+
+- Improved Zig development environment.
+
 ## 2025-04-25
 
 - Fixed memory display in dwm bar.

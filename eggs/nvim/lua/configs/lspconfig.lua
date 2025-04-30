@@ -17,6 +17,7 @@ local servers = {
   "bashls",
   "tinymist",
   "gleam",
+  "zls",
 }
 local nvlsp = require "nvchad.configs.lspconfig"
 
