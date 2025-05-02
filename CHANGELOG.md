@@ -1,5 +1,14 @@
 # Changelog
 
+## 2025-05-02
+
+- Improved dwm bar.
+
+## 2025-05-01
+
+- Added help keybinding for dwm.
+- Added `xx` script.
+
 ## 2025-04-30
 
 - Improve dwm keybindings.

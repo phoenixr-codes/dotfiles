@@ -34,6 +34,8 @@ yolk sync
 
 ## TODO
 
+- [ ] Display error in dwm bar when bar script fails.
+- [x] dwm bar hot reload capability.
 - [x] Add `de_20` spell file `.spl` for neovim.
 - [x] Add screenshots to README.
 - [ ] Include umlauts in `nvim-cmp`.

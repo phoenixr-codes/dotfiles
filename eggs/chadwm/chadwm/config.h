@@ -161,6 +161,7 @@ static const Key keys[] = {
     { MODKEY,                           XK_c,       spawn,          SHCMD("rofi -show drun") },
     { MODKEY,                           XK_Return,  spawn,          SHCMD("kitty") },
     { MODKEY,                           XK_period,  spawn,          SHCMD("flatpak run it.mijorus.smile") },
+    { MODKEY|ShiftMask,                 XK_ssharp,  spawn,          SHCMD("zathura ~/Documents/chadwm/CheatSheet.pdf") },
 
     // toggle stuff
     { MODKEY,                           XK_b,       togglebar,      {0} },
