@@ -41,7 +41,7 @@ def updates [] {
   match $updates_result.exit_code {
     0 => {
       let updates = ($updates_result | get stdout | lines | length)
-      $"[ (fg $green)   ($updates) updates(reset) ]"
+      $"[ (fg $green) ($updates) updates(reset) ]"
     },
     1 | 124 => $"[ (fg $green) Updates unknown(reset) ]",
     2 => $"[ (fg $green) Fully Updated(reset) ]"
@@ -89,7 +89,7 @@ def battery [] {
 }
 
 def brightness [] {
-  $"[(fg $black)(bg $peach) 󰖨 (reset)(fg $white) ((xx brightness) * 100 | math round)%(reset) ]"
+  $"[ (fg $black)(bg $peach) 󰖨 (reset)(fg $white) ((xx brightness) * 100 | math round)%(reset) ]"
 }
 
 def volume [] {
@@ -150,7 +150,8 @@ loop {
   if (do $requires_update $current_interval updates) { $display.updates = updates }
   if (do $requires_update $current_interval memory) { $display.memory = mem }
   if (do $requires_update $current_interval cpu) { $display.cpu = cpu }
-  xsetroot -name $"    ($display.updates) ($display.cpu) ($display.memory) ($display.wlan) ($display.brightness) ($display.volume) ($display.battery) ($display.datetime) ($display.time)"
+  let leading_space = "    " # some space is required otherwise the content is cut
+  xsetroot -name $"($leading_space)($display.updates) ($display.cpu) ($display.memory) ($display.wlan) ($display.brightness) ($display.volume) ($display.battery) ($display.datetime) ($display.time)"
   sleep 1ms
   $current_interval += 1ms
 }

@@ -1,5 +1,9 @@
 # Changelog
 
+## 2025-05-03
+
+- Minor improvements in dwm bar.
+
 ## 2025-05-02
 
 - Improved dwm bar.
