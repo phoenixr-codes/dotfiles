@@ -26,6 +26,9 @@ yolk sync
 
 ## Preview
 
+> [!NOTE]
+> Some images are old and might not represent the latest configuration.
+
 ![Terminal preview](./preview/terminal.png)
 
 ![Desktop preview](./preview/dekstop.png)
