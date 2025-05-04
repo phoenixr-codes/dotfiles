@@ -1,5 +1,10 @@
 # Changelog
 
+## 2025-05-04
+
+- Added yuck plugin to neovim.
+- Improved dwm bar interval.
+
 ## 2025-05-03
 
 - Minor improvements in dwm bar.

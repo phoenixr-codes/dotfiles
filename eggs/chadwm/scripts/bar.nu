@@ -18,6 +18,7 @@ const intervals = [
   [cpu,        30sec]
   [other,      1sec]
 ]
+const reload_interval = 500ms
 
 def fg [color: string] {
   $"^c($color)^"
@@ -140,7 +141,16 @@ mut display = {
   cpu: "",
 }
 loop {
-  let requires_update = {|current, subject| ($current mod ($intervals | where {|x| $x.subject == $subject} | first | get interval)) == 0ms}
+  let requires_update = {|current, subject|
+    ($current mod (
+      $intervals
+      | where {|x| $x.subject == $subject}
+      | first
+      | get interval
+      | append $reload_interval
+      | math max
+    )) == 0ms
+  }
   if (do $requires_update $current_interval time) { $display.time = clock }
   if (do $requires_update $current_interval time) { $display.datetime = datetime }
   if (do $requires_update $current_interval battery) { $display.battery = battery }
@@ -152,6 +162,6 @@ loop {
   if (do $requires_update $current_interval cpu) { $display.cpu = cpu }
   let leading_space = "    " # some space is required otherwise the content is cut
   xsetroot -name $"($leading_space)($display.updates) ($display.cpu) ($display.memory) ($display.wlan) ($display.brightness) ($display.volume) ($display.battery) ($display.datetime) ($display.time)"
-  sleep 1ms
-  $current_interval += 1ms
+  sleep $reload_interval
+  $current_interval += $reload_interval
 }
