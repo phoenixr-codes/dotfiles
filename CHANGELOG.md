@@ -2,6 +2,7 @@
 
 ## 2025-05-04
 
+- Added dunst.
 - Added yuck plugin to neovim.
 - Improved dwm bar interval.
 

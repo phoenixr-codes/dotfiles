@@ -12,7 +12,7 @@ const intervals = [
   [updates,    5min]
   [wlan,       1sec]
   [volume,     1ms]
-  [battery,    2sec]
+  [battery,    30sec]
   [brightness, 1ms]
   [memory,     30sec]
   [cpu,        30sec]
