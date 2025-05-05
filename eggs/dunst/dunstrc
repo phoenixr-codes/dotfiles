@@ -1,0 +1,23 @@
+# vim: set syntax=toml :
+
+[global]
+font = "Iosevka Medium"
+gap_size = 1
+
+[urgency_low]
+background = "#1e1d2d"
+foreground = "#cdd6f4"
+frame_color = "#cdd6f4"
+icon = "/home/jonas/.config/dunst/icons/low.svg"
+
+[urgency_normal]
+background = "#1e1d2d"
+foreground = "#89dceb"
+frame_color = "#89dceb"
+icon = "/home/jonas/.config/dunst/icons/normal.svg"
+
+[urgency_critical]
+background = "#1e1d2d"
+foreground = "#f38ba8"
+frame_color = "#f38ba8"
+icon = "/home/jonas/.config/dunst/icons/critical.svg"

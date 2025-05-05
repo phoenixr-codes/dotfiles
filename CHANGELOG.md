@@ -1,5 +1,9 @@
 # Changelog
 
+## 2025-05-05
+
+- Added dunst configuration.
+
 ## 2025-05-04
 
 - Added dunst.

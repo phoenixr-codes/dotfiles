@@ -37,7 +37,6 @@ yolk sync
 
 ## TODO
 
-- [ ] dwm bar hangs at some point.
 - [ ] Rework dwm keybindings.
 - [ ] Prevent config nu scripts to expose unneeded commands of scripts.
 - [ ] Display error in dwm bar when bar script fails.
