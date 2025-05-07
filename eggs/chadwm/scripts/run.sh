@@ -29,6 +29,7 @@ load_bar() {
 
 xrdb merge ~/.Xresources 
 xbacklight -set 10 &
+setxkbmap de -variant nodeadkeys &
 dunst &
 set_background &
 xset r rate 400 20 &

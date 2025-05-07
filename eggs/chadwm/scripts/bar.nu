@@ -71,9 +71,7 @@ def battery [] {
       | into record
       | default 0 hour
       | default 0 minute
-      | transpose unit value
-      | update value {|x| if $x.unit in ["hour", "minute", "second"] { $x.value | fill --width 2 --alignment right --character 0 } else { $x.value }}
-      | transpose --as-record --header-row | format pattern "{hour}:{minute}"
+      | format pattern "{hour}h {minute}min"
   )
 
   let remaining_until_full = (
@@ -81,9 +79,7 @@ def battery [] {
       | into record
       | default 0 hour
       | default 0 minute
-      | transpose unit value
-      | update value {|x| if $x.unit in ["hour", "minute", "second"] { $x.value | fill --width 2 --alignment right --character 0 } else { $x.value }}
-      | transpose --as-record --header-row | format pattern "{hour}:{minute}"
+      | format pattern "{hour}h {minute}min"
   )
 
   $"[ (fg $display.color)(if (xx battery charging) { $display.icon.charging } else { $display.icon.normal }) ($capacity)%(reset)(fg $white) (if (xx battery charging) { $'($remaining_until_full) until full' } else { $'($remaining_until_empty) until empty' })(reset) ]"

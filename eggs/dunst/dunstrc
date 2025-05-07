@@ -1,5 +1,7 @@
 # vim: set syntax=toml :
 
+# TODO: use yolk templates for config dir; see: https://github.com/elkowar/yolk/issues/55
+
 [global]
 font = "Iosevka Medium"
 gap_size = 1

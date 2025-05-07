@@ -1,5 +1,14 @@
 # Changelog
 
+## 2025-05-07
+
+- Configured kitty to open new tab in same working directory.
+- Improved dwm bar.
+
+## 2025-05-06
+
+- Configured keyboard.
+
 ## 2025-05-05
 
 - Added dunst configuration.

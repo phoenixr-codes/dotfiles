@@ -37,6 +37,7 @@ yolk sync
 
 ## TODO
 
+- [ ] Run entries in `~/.config/autostart/` on startup.
 - [ ] Rework dwm keybindings.
 - [ ] Prevent config nu scripts to expose unneeded commands of scripts.
 - [ ] Display error in dwm bar when bar script fails.
