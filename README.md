@@ -2,7 +2,8 @@
 
 ## Requirements
 
-- [Yolk][]
+- [Yolk][] (0.3.2)
+- [Nushell][] (optional, recommended) (0.104.0)
 
 ## Installation
 
@@ -67,5 +68,6 @@ yolk sync
 - [x] Improve colors in dwm bar.
 - [x] Remove CPU and memory from dwm bar.
 
+[Nushell]: https://www.nushell.sh/
 [Yolk]: https://elkowar.github.io/yolk/
 
