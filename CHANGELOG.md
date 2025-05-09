@@ -1,5 +1,9 @@
 # Changelog
 
+## 2025-05-09
+
+- Prevent bar from hanging.
+
 ## 2025-05-07
 
 - Configured kitty to open new tab in same working directory.

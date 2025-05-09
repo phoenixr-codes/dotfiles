@@ -16,7 +16,7 @@ load_bar() {
   bar_pid=$!
   while true; do
     last_modified=$(stat -c "%Y" "$bar_path")
-    if [ "$last_modified" -gt "$old_modified" ]; then
+    if [ "$last_modified" -gt "$old_modified" ] || ! kill -0 "$bar_pid" 2>/dev/null; then
       kill "$bar_pid"
       wait "$bar_pid" 2>/dev/null
       nu "$bar_path" &
