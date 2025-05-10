@@ -18,6 +18,7 @@ local servers = {
   "tinymist",
   "gleam",
   "zls",
+  "nushell",
 }
 local nvlsp = require "nvchad.configs.lspconfig"
 
