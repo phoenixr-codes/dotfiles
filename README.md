@@ -38,10 +38,11 @@ yolk sync
 
 ## TODO
 
+- [ ] Screen saver/lock (see also: `xss-lock` & `xset s ...`)
 - [ ] Run entries in `~/.config/autostart/` on startup.
 - [ ] Rework dwm keybindings.
 - [ ] Prevent config nu scripts to expose unneeded commands of scripts.
-- [ ] Display error in dwm bar when bar script fails.
+- [x] Display error in dwm bar when bar script fails.
 - [x] dwm bar hot reload capability.
 - [x] Add `de_20` spell file `.spl` for neovim.
 - [x] Add screenshots to README.
