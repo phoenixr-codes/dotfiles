@@ -1,5 +1,9 @@
 # Changelog
 
+## 2025-05-12
+
+- Fixed lock key in dwm.
+
 ## 2025-05-09
 
 - Prevent bar from hanging.

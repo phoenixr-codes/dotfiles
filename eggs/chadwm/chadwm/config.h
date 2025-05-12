@@ -64,7 +64,7 @@ static const char *colors[][3]      = {
 /* tagging */
 static char *tags[] = {"", "", "󰍳", "", ""};
 
-static const char* eww[] = { "/usr/local/eww/target/release/eww", "open" , "eww", NULL };
+static const char* eww[] = { "/usr/local/eww/target/release/eww", "open" , "control-center", NULL };
 
 static const Launcher launchers[] = {
     /* command     name to display */
@@ -155,7 +155,7 @@ static const Key keys[] = {
     // functions
     // TODO: keybind list on F1
     // TODO: airplane mode on F8
-    {0,                                 XK_F10,     spawn,          SHCMD("dm-tool switch-to-greeter") },
+    {0,                                 XK_F10,     spawn,          SHCMD("dm-tool lock") },
 
     // apps
     { MODKEY,                           XK_c,       spawn,          SHCMD("rofi -show drun") },
