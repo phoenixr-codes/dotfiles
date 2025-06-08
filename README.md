@@ -1,4 +1,6 @@
-# dotfiles
+<p align="center">
+    <img src="logo.svg" width="45%" alt="dotfiles" />
+</p>
 
 ## Requirements
 
@@ -35,6 +37,14 @@ yolk sync
 ![Desktop preview](./preview/dekstop.png)
 
 ![Education workflow preview](./preview/education.png)
+
+## Development
+
+### Logo
+
+```console
+typst compile --format "svg" scripts/logo.typ logo.svg
+```
 
 ## TODO
 
