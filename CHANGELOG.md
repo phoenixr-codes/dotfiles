@@ -2,6 +2,7 @@
 
 ## 2025-06-13
 
+- Remove Android-specific Bun invocation.
 - Configure shell environment variable for fetch.
 - Remove Odin from PATH.
 
