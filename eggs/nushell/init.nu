@@ -29,7 +29,9 @@ let waifufetch_ran = if (which waifufetch | is-not-empty) {
     print $output
     true
   }
-}
+} else {
+    false
+  }
 
 if (not $waifufetch_ran and (which neofetch | is-not-empty)) {
   neofetch
