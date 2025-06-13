@@ -58,7 +58,6 @@ $env.PATH = (
   | append '/usr/local/flutter/bin'
   | append '/usr/local/texlive/2024/bin/x86_64-linux'
   | append '/usr/local/eww/target/release'
-  | append '/usr/local/Odin'
   | append '/usr/local/ols'
   | append '/usr/local/MCCompiledSource/mc-compiled-language-server/bin/Release/net9.0'
   | append '/usr/local/mcpelauncher-extract/build'

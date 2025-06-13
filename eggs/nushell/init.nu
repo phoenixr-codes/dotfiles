@@ -22,7 +22,7 @@ if $motd_is_old {
 
 # Launch neofetch.
 let waifufetch_ran = if (which waifufetch | is-not-empty) {
-  let output = (waifufetch | complete | get stdout)
+  let output = (with-env {SHELL: $nu.current-exe} { waifufetch } | complete | get stdout)
   if ($output | str trim | is-empty) {
     false
   } else {

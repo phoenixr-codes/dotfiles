@@ -1,5 +1,10 @@
 # Changelog
 
+## 2025-06-13
+
+- Configure shell environment variable for fetch.
+- Remove Odin from PATH.
+
 ## 2025-05-12
 
 - Fixed lock key in dwm.
