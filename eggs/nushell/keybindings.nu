@@ -1,6 +1,17 @@
 export def --env main [] {
   $env.config.keybindings = [
     {
+      # TODO: doesn't seem to work
+      name: reload_config
+      modifier: none
+      keycode: f5
+      mode: [emacs vi_normal vi_insert]
+      event: {
+        send: executehostcommand,
+        cmd: $"source '($nu.env-path)';source '($nu.config-path)'"
+      }
+    }
+    {
       name: completion_menu
       modifier: none
       keycode: tab

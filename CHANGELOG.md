@@ -1,11 +1,19 @@
 # Changelog
 
+## 2025-06-18
+
+- Disable Nushell completions.
+
+## 2025-06-15
+
+- Changed terminal for rofi.
+
 ## 2025-06-13
 
-- Fix issue when waifufetch not installed.
-- Remove Android-specific Bun invocation.
-- Configure shell environment variable for fetch.
-- Remove Odin from PATH.
+- Fixed issue when waifufetch not installed.
+- Removed Android-specific Bun invocation.
+- Configured shell environment variable for fetch.
+- Removed Odin from PATH.
 
 ## 2025-05-12
 

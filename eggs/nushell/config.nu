@@ -150,5 +150,5 @@ def --env y [
 }
 
 source init.nu
-source completions.nu
+#source completions.nu
 use xx.nu
