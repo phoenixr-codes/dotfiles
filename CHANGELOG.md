@@ -1,8 +1,12 @@
 # Changelog
 
+## 2025-06-23
+
+- Use Catppuccin palette for logo.
+
 ## 2025-06-18
 
-- Disable Nushell completions.
+- Disabled Nushell completions.
 
 ## 2025-06-15
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env nu
 
 # NOTE: Updating this script triggers a reload such that "live ricing" is more
-#       convenient. This way you don't have to restart dwm when experimenting.
+#       convenient. This way you don't have to restart dwm when tweaking around.
 
 use ~/.config/chadwm/scripts/bar_themes/catppuccin.nu
 use ~/.config/nushell/xx.nu
