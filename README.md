@@ -11,7 +11,9 @@
 
 ### Automatic Installation
 
-```console
+Execute the following command in a Nushell REPL:
+
+```nu
 http get "https://raw.githubusercontent.com/phoenixr-codes/dotfiles/refs/heads/main/scripts/install.nu" | nu -c $in
 ```
 
