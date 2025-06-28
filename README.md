@@ -9,6 +9,14 @@
 
 ## Installation
 
+### Automatic Installation
+
+```console
+http get "https://raw.githubusercontent.com/phoenixr-codes/dotfiles/refs/heads/main/scripts/install.nu" | nu -c $in
+```
+
+### Manual Installation
+
 > [!IMPORTANT]
 > You might have to backup or remove some config directories before syncing
 > them.

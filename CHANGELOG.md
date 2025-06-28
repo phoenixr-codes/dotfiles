@@ -1,5 +1,10 @@
 # Changelog
 
+## 2025-06-28
+
+- Added installer script.
+- Added git config.
+
 ## 2025-06-23
 
 - Use Catppuccin palette for logo.
