@@ -103,7 +103,7 @@ def main [
 
   # Install yolk
   if (which yolk | is-empty) {
-    log info "yolk seems to be not be installed"
+    log info "yolk seems not to be installed"
     input "Press enter to confirm installation of yolk"
     if (which cargo | is-empty) {
       log error "cargo seems to be not installed"

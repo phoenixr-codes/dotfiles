@@ -4,6 +4,7 @@
 
 - Added installer script.
 - Added git config.
+- Added waifufetch config.
 
 ## 2025-06-23
 
