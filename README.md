@@ -58,6 +58,7 @@ typst compile --format "svg" scripts/logo.typ logo.svg
 
 ## TODO
 
+- [ ] Make bible.json a bible.sql db.
 - [ ] Move third-party applications to `/opt`.
 - [ ] Put dwm cheat sheet source in config and compile in Makefile.
 - [ ] Screen saver/lock (see also: `xss-lock` & `xset s ...`)

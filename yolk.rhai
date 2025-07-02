@@ -5,7 +5,6 @@ export let data = #{
 };
 export let eggs = #{
     bat: #{ targets: "~/.config/bat" },
-    chadwm: #{ targets: "~/.config/chadwm", main_file: "chadwm/config.h", strategy: "merge" },
     git: #{ targets: "~/.config/git" },
     nvim: #{ targets: "~/.config/nvim" },
     neofetch: #{ targets: "~/.config/neofetch" },

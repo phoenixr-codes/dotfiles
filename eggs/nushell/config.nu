@@ -123,6 +123,11 @@ alias rr = java -jar ($nu.home-path | path join Programs rr.war)
 alias mcc = mc-compiled
 alias task = go-task
 
+# Evaluates the WLAN0 IPv4 address.
+def ip [] {
+  sys net | where name == wlan0 | first | get ip | where protocol == ipv4 | first | get address
+}
+
 # Launches the default editor.
 #
 # This command respects virtual environments such as Poetry.

@@ -1,5 +1,11 @@
 # Changelog
 
+## 2025-07-02
+
+- Added `ip` command for Nushell.
+- Added random bible verse print in `init.nu`.
+- Removed `chadwm`.
+
 ## 2025-06-28
 
 - Added installer script.
