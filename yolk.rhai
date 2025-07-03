@@ -1,8 +1,17 @@
 // vim: set syntax=javascript :
+
+export let theme = #{
+  catppuccin_mocha: "Catppuccin Mocha",
+  catppuccin_frappe: "Catppuccin Frappe",
+  palenight: "Palenight",
+  nord: "Nord",
+};
+
 export let data = #{
     for_vcs: LOCAL,
-    theme: "Catppuccin Mocha",
+    theme: theme.catppuccin_mocha,
 };
+
 export let eggs = #{
     bat: #{ targets: "~/.config/bat" },
     git: #{ targets: "~/.config/git" },

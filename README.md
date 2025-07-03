@@ -84,8 +84,7 @@ typst compile --format "svg" scripts/logo.typ logo.svg
 - [x] Configure emoji selection apps and localsend to float in dwm.
 - [x] Only include `config.h` of dwm.
 - [ ] Add eww configurations.
-- [ ] Fix eww font and gap issue.
-- [ ] Fix font in dwm bar.
+- [x] Fix font in dwm bar.
 - [x] Apply different colors to panels on dwm bar (again).
 - [x] Add audio level/muted to dwm bar.
 - [x] Different battery icon depending on percentage.

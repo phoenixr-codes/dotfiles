@@ -4,22 +4,22 @@
 
 use keybindings.nu
 
-# {% if data.theme == "Palenight" %}
+# {% if data.theme == theme.palenight %}
 #<yolk> source scripts/themes/nu-themes/material-palenight.nu
 #<yolk> if (which kitten | is-not-empty) {
   #<yolk> try { kitten themes palenight }
 #<yolk> }
 # {% end %}
-# {% if data.theme == "Catppuccin Frappe" %}
+# {% if data.theme == theme.catppuccin_frappe %}
 #<yolk> source scripts/themes/nu-themes/catppuccin-frappe.nu
 #<yolk> if (which kitten | is-not-empty) {
   #<yolk> try { kitten themes Catppuccin-Frappe }
 #<yolk> }
 # {% end %}
-# {% if data.theme == "Catppuccin Mocha" %}
+# {% if data.theme == theme.catppuccin_mocha %}
 source scripts/themes/nu-themes/catppuccin-mocha.nu
 if (which kitten | is-not-empty) {
-  try { kitten themes Catppuccin-Mocha }
+try { kitten themes Catppuccin-Mocha }
 }
 # {% end %}
 
