@@ -37,21 +37,6 @@ if (not $waifufetch_ran and (which neofetch | is-not-empty)) {
   neofetch
 }
 
-if ("~/bible.json" | path exists) {
-  let verse = open ~/bible.json
-    | get books
-    | shuffle
-    | first
-    | get chapters
-    | shuffle
-    | first
-    | get verses
-    | shuffle
-    | first
-  print $"(ansi c)($verse.name)(ansi reset)"
-  print $verse.text
-}
-
 }
 
 # Launch starship.
