@@ -117,12 +117,6 @@ $env.config = {
   ]
 }
 
-# Aliases
-alias disfire = sudo systemctl stop firewalld
-alias rr = java -jar ($nu.home-path | path join Programs rr.war)
-alias mcc = mc-compiled
-alias task = go-task
-
 # Evaluates the WLAN0 IPv4 address.
 def ip [] {
   sys net | where name == wlan0 | first | get ip | where protocol == ipv4 | first | get address
@@ -154,6 +148,7 @@ def --env y [
 	rm -fp $tmp
 }
 
+source aliases.nu
 source init.nu
 #source completions.nu
 use xx.nu

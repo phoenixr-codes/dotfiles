@@ -4,6 +4,7 @@
 
 - Setup Scala development.
 - Add `typstyle` as formatter.
+- Update Nushell aliases.
 
 ## 2025-07-02
 
