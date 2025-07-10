@@ -5,12 +5,15 @@ if (which eos-update | is-not-empty) {
   eos-update
 }
 
-# charm apps
+# Go programs
 if (which vhs | is-not-empty) {
   go install github.com/charmbracelet/vhs@latest
 }
 if (which glow | is-not-empty) {
   go install github.com/charmbracelet/glow@latest
+}
+if (which task | is-not-empty) {
+  go install github.com/go-task/task/v3/cmd/task@latest
 }
 
 # Rust

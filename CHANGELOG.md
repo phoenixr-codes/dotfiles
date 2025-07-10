@@ -2,6 +2,7 @@
 
 ## 2025-07-10
 
+- Update `up.nu`.
 - Setup Scala development.
 - Add `typstyle` as formatter.
 - Update Nushell aliases.
