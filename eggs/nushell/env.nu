@@ -70,6 +70,7 @@ $env.PATH = (
   | append ($nu.home-path | path join '.bun/bin')
   | append ($nu.home-path | path join '.deno/bin')
   | append ($nu.home-path | path join '.local/share/gem/ruby/3.3.0/bin')
+  | append ($nu.home-path | path join '.local/share/coursier/bin/')
   | append ($nu.home-path | path join 'Programs/clion-2024.2.2/bin')
   | append ($nu.home-path | path join 'Programs/idea-IU-243.26053.27/bin')
   | append ($nu.home-path | path join 'Programs/zig')

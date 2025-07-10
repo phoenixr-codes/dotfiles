@@ -1,5 +1,10 @@
 # Changelog
 
+## 2025-07-10
+
+- Setup Scala development.
+- Add `typstyle` as formatter.
+
 ## 2025-07-02
 
 - Added `ip` command for Nushell.

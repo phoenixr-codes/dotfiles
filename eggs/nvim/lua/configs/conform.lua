@@ -8,6 +8,7 @@ local options = {
     java = { "astyle" },
     python = { "ruff" },
     nim = { "nimpretty" },
+    typst = { "typstyle" },
   },
 
   -- format_on_save = {

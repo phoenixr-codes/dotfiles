@@ -19,6 +19,7 @@ local servers = {
   "gleam",
   "zls",
   "nushell",
+  "metals",
 }
 local nvlsp = require "nvchad.configs.lspconfig"
 
