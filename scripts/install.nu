@@ -131,10 +131,11 @@ def main [
   let eggs = yolk eval "eggs.to_json()" | from json | transpose "name" "data"
   for egg in $eggs {
     let targets = $egg.data.targets
-    let path = if ($targets | describe -d | get type) == record { $targets | values | first } else { $targets } | path expand
+    let path = if ($targets | describe -d | get type) == record { $targets | values | first } else { $targets } | path expand --no-symlink
     log info $"Backing up ($path)"
     if not $simulate {
       if ($path | path type) == "symlink" {
+        print $path
         rm $path
       } else if ($path | path exists) {
         mv $path $backup_dir
