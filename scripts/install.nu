@@ -133,7 +133,7 @@ def main [
     let targets = $egg.data.targets
     let path = if ($targets | describe -d | get type) == record { $targets | values | first } else { $targets }
     log info $"Backing up ($path)"
-    if not $simulate {
+    if not $simulate and ($path | path exists) {
       mv $path $backup_dir
     }
   }
