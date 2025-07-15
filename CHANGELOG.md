@@ -1,5 +1,15 @@
 # Changelog
 
+## 2025-07-15
+
+- Improved installer script.
+- Setup `nupm`.
+
+
+## 2025-07-12
+
+- Fixes and improvements for `up.nu`.
+
 ## 2025-07-10
 
 - Update `up.nu`.

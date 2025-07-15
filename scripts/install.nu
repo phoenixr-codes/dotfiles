@@ -75,6 +75,10 @@ def main [
 ] {
   log warn "This script is currently in development! Use with caution."
 
+  if ($simulate) {
+    log info "Simulate mode is on"
+  }
+
   print ($title | ansi gradient --fgstart ($palette.red | str replace --regex "^#" "0x") --fgend ($palette.yellow | str replace --regex "^#" "0x"))
   print $"Source Code: ("https://github.com/phoenixr-codes/dotfiles" | ansi link)"
   print ($"
@@ -86,19 +90,6 @@ def main [
   if (which git | is-empty) {
     log error "git seems to be not installed"
     exit 1
-  }
-
-  # Clone dotfiles repo
-  let target_dir_default = $env.HOME | path join ".config/yolk"
-  let target_dir = ask "Where do you want to install the dotfiles?" --default $target_dir_default
-  if not $simulate {
-    if ($target_dir | path exists) {
-      log info "Updating dotfiles repository"
-      git -C $target_dir pull
-    } else {
-      log info "Cloning dotfiles repository"
-      git clone --depth 1 --recurse-submodules https://github.com/phoenixr-codes/dotfiles $target_dir
-    }
   }
 
   # Install yolk
@@ -116,12 +107,25 @@ def main [
     log info "yolk already installed"
   }
 
+  # Clone dotfiles repo
+  let target_dir_default = $env.HOME | path join ".config/yolk"
+  let target_dir = ask "Where do you want to install the dotfiles?" --default $target_dir_default
+  if not $simulate {
+    if ($target_dir | path exists) {
+      log info "Updating dotfiles repository"
+      yolk git -C $target_dir pull
+    } else {
+      log info "Cloning dotfiles repository"
+      git clone --depth 1 --recurse-submodules https://github.com/phoenixr-codes/dotfiles $target_dir
+      yolk safeguard
+    }
+  }
+
   # Perform backup
-  let backup_dir_default = $env.HOME | path join ".dotfiles_backup"
+  let backup_dir_default = $env.HOME | path join $".dotfiles_backup_(random uuid -v 7)"
   let backup_dir = ask "Where do you want to strore the backup? The provided directory will be emptied!" --default $backup_dir_default
   log info "Performing backup of targeted files and directories"
   if not $simulate {
-    rm -rf $backup_dir
     mkdir $backup_dir
   }
   let eggs = yolk eval "eggs.to_json()" | from json | transpose "name" "data"
@@ -146,5 +150,5 @@ def main [
     touch ~/.config/nushell/secrets.nu
   }
 
-  log success "Succefully installed dotfiles"
+  log success "Successfully installed dotfiles"
 }

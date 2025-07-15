@@ -4,6 +4,8 @@ use std assert
 
 $env.ON_ANDROID = ((sys host).long_os_version | str contains "Android")
 
+$env.NUPM_HOME = ($nu.home-path | path join ".nupm")
+
 # Specifies how environment variables are:
 # - converted from a string to a value on Nushell startup (from_string)
 # - converted from a value back to a string when running external commands (to_string)
@@ -22,7 +24,8 @@ $env.ENV_CONVERSIONS = {
 # Directories to search for scripts when calling source or use
 # The default for this is $nu.default-config-dir/scripts
 $env.NU_LIB_DIRS = [
-  ($nu.default-config-dir | path join 'scripts') # add <nushell-config-dir>/scripts
+  ($nu.default-config-dir | path join 'scripts')
+  ($env.NUPM_HOME | path join "modules")
 ]
 
 # Directories to search for plugin binaries when calling register
@@ -80,6 +83,7 @@ $env.PATH = (
   | append ($env.DEVKITARM | path join 'bin')
   | append ($env.ANDROID_HOME | path join 'platform-tools')
   | append ($env.WASMTIME_HOME | path join 'bin')
+  | append ($env.NUPM_HOME | path join "scripts")
 )
 
 # Add latest version of roc to PATH.
@@ -93,6 +97,8 @@ try {
 
 const secrets_path = ($nu.default-config-dir | path join 'secrets.nu')
 source-env $secrets_path
+
+use ($nu.home-path | path join ".nupm/nupm")
 
 if (which nvim | is-not-empty) {
   $env.EDITOR = "nvim"
