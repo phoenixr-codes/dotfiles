@@ -72,7 +72,7 @@ def "str dedent" []: string -> string {
 # Installer script for phoenixR's dotfiles.
 def main [
   --simulate (-n) # Do not actually make any filesystem changes
-] {
+]: nothing -> nothing {
   log warn "This script is currently in development! Use with caution."
 
   if ($simulate) {
