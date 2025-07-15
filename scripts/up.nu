@@ -53,7 +53,7 @@ if (which rustup | is-not-empty) and (input bool "Update Rust toolchain?" -y) {
 
 # Crates
 if (which yolk | is-not-empty) and (input bool "Update yolk?" -y) {
-  cargo install --force --locked yolk-dots
+  cargo install --force --locked yolk_dots
 }
 if (which mdbook | is-not-empty) and (input bool "Update mdBook?" -y) {
   cargo install --force --locked mdbook
