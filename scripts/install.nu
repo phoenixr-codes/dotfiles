@@ -135,7 +135,6 @@ def main [
     log info $"Backing up ($path)"
     if not $simulate {
       if ($path | path type) == "symlink" {
-        print $path
         rm $path
       } else if ($path | path exists) {
         mv $path $backup_dir
