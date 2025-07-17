@@ -38,7 +38,7 @@ export def "wlan connected" []: nothing -> bool {
 #
 # This returns `null` when not connected to WLAN.
 export def "wlan ssid" []: nothing -> string {
-  let ssid = (iw dev wlan0 info | lines | find --regex "ssid")
+  let ssid = (iw dev wlan0 info | lines | find --no-highlight --regex "ssid")
   if ($ssid | is-empty) {
     null
   } else {
