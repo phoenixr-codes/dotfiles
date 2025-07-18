@@ -1,5 +1,9 @@
 # Changelog
 
+## 2025-07-18
+
+- Added `copy` alias.
+
 ## 2025-07-15
 
 - Improved installer script.
