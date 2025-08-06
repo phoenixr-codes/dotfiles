@@ -58,6 +58,7 @@ typst compile --format "svg" scripts/logo.typ logo.svg
 
 ## TODO
 
+- [ ] `waifufetch` hangs when bad internet connection.
 - [ ] Download nupm in installation script or have it as a git submodule.
 - [ ] Move third-party applications to `/opt`.
 - [ ] Put dwm cheat sheet source in config and compile in Makefile.

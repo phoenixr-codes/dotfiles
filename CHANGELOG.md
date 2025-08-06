@@ -1,5 +1,9 @@
 # Changelog
 
+## 2025-08-06
+
+- Updated config for todo-comments plugin.
+
 ## 2025-07-18
 
 - Added `copy` alias.

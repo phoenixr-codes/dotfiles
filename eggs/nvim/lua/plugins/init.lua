@@ -13,16 +13,6 @@ return {
   },
 
   {
-    "lervag/vimtex",
-    lazy = false, -- we don't want to lazy load VimTeX
-    -- tag = "v2.15", -- uncomment to pin to a specific release
-    init = function()
-      -- VimTeX configuration goes here, e.g.
-      vim.g.vimtex_view_method = "mupdf"
-    end,
-  },
-
-  {
     "kaarmu/typst.vim",
     ft = "typst",
     lazy = false,
@@ -140,7 +130,22 @@ return {
     "folke/todo-comments.nvim",
     event = "VimEnter",
     dependencies = { "nvim-lua/plenary.nvim" },
-    opts = { signs = false },
+    opts = {
+      signs = true,
+      keywords = {
+        ATTENTION = {
+          icon = "",
+          color = "#cba6f7",
+        },
+        SAFETY = {
+          icon = " ",
+          color = "hint",
+        }
+      },
+      highlight = {
+        keyword = "bg"
+      }
+    },
   },
 
   {

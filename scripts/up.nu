@@ -1,5 +1,7 @@
 #!/usr/bin/env nu
 
+# TODO: only install, when there is a more recent version
+
 def "input bool" [prompt: string, --default-yes (-y)]: nothing -> bool {
   loop {
     let answer = input --numchar 1 --suppress-output --default (if $default_yes { "y" } else { "n" }) $"($prompt) [y/n]" | str downcase
@@ -60,4 +62,19 @@ if (which mdbook | is-not-empty) and (input bool "Update mdBook?" -y) {
 }
 if (which nu | is-not-empty) and (input bool "Update Nushell?" -y) {
   cargo install --force --locked nu
+}
+
+# Python programs
+if (which rofimoji | is-not-empty) and (input bool "Update rofimoji?" -y) {
+  pipx install --force git+https://github.com/fdw/rofimoji.git
+}
+
+# Deno
+if (which deno | is-not-empty) and (input bool "Update Deno?" -y) {
+  deno upgrade
+}
+
+# Bun
+if (which bun | is-not-empty) and (input bool "Update Bun?" -y) {
+  bun upgrade
 }
