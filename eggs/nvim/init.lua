@@ -35,6 +35,7 @@ ls.add_snippets("all", require("snippets.licenses"))
 
 require "options"
 require "filetype"
+require "ts"
 require "nvchad.autocmds"
 
 vim.schedule(function()

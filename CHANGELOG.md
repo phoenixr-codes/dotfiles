@@ -1,5 +1,12 @@
 # Changelog
 
+## 2025-08-21
+
+- Add more WLAN related commands for `xx`.
+- Add custom tree sitter grammar for `mcfunction` in Neovim.
+- Configure icons for `.mcfunction` and `.lang` files in Neovim.
+- Minor updates in NuShell configurations.
+
 ## 2025-08-06
 
 - Updated config for todo-comments plugin.

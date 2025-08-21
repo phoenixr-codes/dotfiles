@@ -63,6 +63,9 @@ if (which mdbook | is-not-empty) and (input bool "Update mdBook?" -y) {
 if (which nu | is-not-empty) and (input bool "Update Nushell?" -y) {
   cargo install --force --locked nu
 }
+if (which evcxr | is-not-empty) and (input bool "Update evcxr?" -y) {
+  cargo install --force --locked evcxr_repl
+}
 
 # Python programs
 if (which rofimoji | is-not-empty) and (input bool "Update rofimoji?" -y) {

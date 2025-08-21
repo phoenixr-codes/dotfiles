@@ -46,6 +46,25 @@ export def "wlan ssid" []: nothing -> string {
   }
 }
 
+# Turn off WiFi.
+export def "wlan disable" []: nothing -> nothing {
+  nmcli radio wifi off
+}
+
+# Turn on WiFi.
+export def "wlan enable" []: nothing -> nothing {
+  nmcli radio wifi on
+}
+
+# Toggle WiFi status.
+export def "wlan toggle" []: nothing -> nothing {
+  if (wlan connected) {
+    wlan disable
+  } else {
+    wlan enable
+  }
+}
+
 # Return the current battery level between 0 and 1.
 export def battery []: nothing -> float {
   (open /sys/class/power_supply/BAT0/capacity | into int) / 100

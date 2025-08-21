@@ -40,7 +40,9 @@ yolk sync
 ## Preview
 
 > [!NOTE]
-> Some images are old and might not represent the latest configuration.
+> Images may not be up-to-date.
+
+![Editor preview](./preview/editor.png)
 
 ![Terminal preview](./preview/terminal.png)
 

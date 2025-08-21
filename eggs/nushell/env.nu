@@ -96,7 +96,7 @@ try {
 }
 
 const secrets_path = ($nu.default-config-dir | path join 'secrets.nu')
-source-env $secrets_path
+source-env (if ($secrets_path | path exists) { $secrets_path } else { null })
 
 use ($nu.home-path | path join ".nupm/nupm")
 

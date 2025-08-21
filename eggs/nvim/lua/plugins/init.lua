@@ -13,6 +13,31 @@ return {
   },
 
   {
+    "nvim-tree/nvim-web-devicons",
+    opts = function()
+      dofile(vim.g.base46_cache .. "devicons")
+      return {
+        override = require "nvchad.icons.devicons",
+        override_by_extension = {
+          ["lang"] = {
+            icon = "",
+            color = "#74c7ec",
+            cterm_color = "25",
+            name = "Language"
+          },
+          ["mcfunction"] = {
+            icon = "󰍳",
+            -- icon = "󰿠",
+            color = "#70b237",
+            cterm_color = "2",
+            name = "Minecraft",
+          },
+        },
+      }
+    end,
+  },
+
+  {
     "kaarmu/typst.vim",
     ft = "typst",
     lazy = false,
@@ -140,11 +165,11 @@ return {
         SAFETY = {
           icon = " ",
           color = "hint",
-        }
+        },
       },
       highlight = {
-        keyword = "bg"
-      }
+        keyword = "bg",
+      },
     },
   },
 

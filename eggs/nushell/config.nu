@@ -151,4 +151,5 @@ def --env y [
 source aliases.nu
 source init.nu
 #source completions.nu
+source preload.nu
 use xx.nu

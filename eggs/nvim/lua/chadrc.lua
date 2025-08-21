@@ -4,8 +4,8 @@
 ---@type ChadrcConfig
 local M = {}
 
-local light_theme = "palenight"
-local dark_theme = "palenight"
+local light_theme = "catppuccin"
+local dark_theme = "catppuccin"
 
 M.base46 = {
 	theme = dark_theme,
