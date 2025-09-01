@@ -60,6 +60,7 @@ typst compile --format "svg" scripts/logo.typ logo.svg
 
 ## TODO
 
+- [ ] Autostart btop and put it in workspace 5 (tux)
 - [ ] `waifufetch` hangs when bad internet connection.
 - [ ] Download nupm in installation script or have it as a git submodule.
 - [ ] Move third-party applications to `/opt`.

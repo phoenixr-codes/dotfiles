@@ -5,5 +5,6 @@ parsers.mcfunction = {
     url = "~/Projects/tree-sitter-mcfunction",
     files = { "src/parser.c" },
     branch = "main",
+    queries = "queries",
   },
 }

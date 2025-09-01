@@ -1,11 +1,20 @@
 # Changelog
 
+## 2025-08-25
+
+- Update snippets.
+
+## 2025-08-22
+
+- Change `mkfile` to `scaf`.
+
 ## 2025-08-21
 
 - Add more WLAN related commands for `xx`.
 - Add custom tree sitter grammar for `mcfunction` in Neovim.
 - Configure icons for `.mcfunction` and `.lang` files in Neovim.
 - Minor updates in NuShell configurations.
+- Add `mkfile` command.
 
 ## 2025-08-06
 

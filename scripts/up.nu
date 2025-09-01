@@ -66,6 +66,9 @@ if (which nu | is-not-empty) and (input bool "Update Nushell?" -y) {
 if (which evcxr | is-not-empty) and (input bool "Update evcxr?" -y) {
   cargo install --force --locked evcxr_repl
 }
+if (which typst | is-not-empty) and (input bool "Update typst?" -y) {
+  cargo install --locked typst-cli
+}
 
 # Python programs
 if (which rofimoji | is-not-empty) and (input bool "Update rofimoji?" -y) {

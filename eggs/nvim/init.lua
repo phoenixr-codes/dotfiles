@@ -29,10 +29,7 @@ require("lazy").setup({
 dofile(vim.g.base46_cache .. "defaults")
 dofile(vim.g.base46_cache .. "statusline")
 
--- load snippets
-local ls = require "luasnip"
-ls.add_snippets("all", require("snippets.licenses"))
-
+require "snippets"
 require "options"
 require "filetype"
 require "ts"

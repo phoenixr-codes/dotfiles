@@ -4,7 +4,7 @@ local t = ls.text_node
 local i = ls.insert_node
 
 return {
-  snip("license-mit", {
+  snip({ trig = "license-mit", name = "MIT License", desc = "Inserts the MIT license." }, {
     t {
       "MIT License",
       "",
@@ -33,9 +33,9 @@ return {
       "OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE",
       "SOFTWARE.",
     },
-  }, { name = "MIT License", desc = "Inserts the MIT license." }),
+  }),
 
-  snip("license-unlicense", {
+  snip({ trig = "license-unlicense", name = "Unlicense", desc = "Inserts the Unlicense." }, {
     t {
       "This is free and unencumbered software released into the public domain.",
       "",
@@ -62,5 +62,5 @@ return {
       "",
       "For more information, please refer to <https://unlicense.org>",
     },
-  }, { name = "Unlicense", desc = "Inserts the Unlicense." }),
+  }),
 }

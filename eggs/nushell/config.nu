@@ -148,6 +148,21 @@ def --env y [
 	rm -fp $tmp
 }
 
+# Creates a new file or directory from a template in ~/Templates.
+def scaf [
+  dest: path = .
+]: nothing -> nothing {
+  let templates_dir = $nu.home-path | path join Templates
+  let prompt = "Select a template"
+    | ansi gradient --fgstart '0x40c9ff' --fgend '0xe81cff'
+  $templates_dir
+    | path join (ls $templates_dir
+      | get name
+      | path basename
+      | input list $prompt)
+    | cp -r $in $dest
+}
+
 source aliases.nu
 source init.nu
 #source completions.nu

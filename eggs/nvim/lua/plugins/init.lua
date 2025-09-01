@@ -19,19 +19,26 @@ return {
       return {
         override = require "nvchad.icons.devicons",
         override_by_extension = {
-          ["lang"] = {
+          lang = {
             icon = "",
             color = "#74c7ec",
             cterm_color = "25",
             name = "Language"
           },
-          ["mcfunction"] = {
+          mcfunction = {
             icon = "󰍳",
             -- icon = "󰿠",
             color = "#70b237",
             cterm_color = "2",
             name = "Minecraft",
           },
+          mcstructure = {
+            icon = "󰍳",
+            -- icon = "󰿠",
+            color = "#70b237",
+            cterm_color = "2",
+            name = "Minecraft",
+          }
         },
       }
     end,
@@ -116,7 +123,7 @@ return {
   },
 
   {
-    "https://github.com/amber-lang/amber-vim.git",
+    "amber-lang/amber-vim",
     lazy = false,
   },
 
