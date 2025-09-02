@@ -1,6 +1,7 @@
 # Nushell Environment Config File
 
 use std assert
+use std/util "path add"
 
 $env.ON_ANDROID = ((sys host).long_os_version | str contains "Android")
 
@@ -55,45 +56,32 @@ $env.MANPAGER = r#'sh -c 'sed -u -e "s/\\x1B\[[0-9;]*m//g; s/.\\x08//g" | bat -p
 
 $env.COM_MOJANG = ($nu.home-path | path join ".local/share/mcpelauncher/games/com.mojang/")
 
-$env.PATH = (
-  $env.PATH
-  | split row (char esep)
-  | append '/usr/local/flutter/bin'
-  | append '/usr/local/texlive/2024/bin/x86_64-linux'
-  | append '/usr/local/eww/target/release'
-  | append '/usr/local/ols'
-  | append '/usr/local/MCCompiledSource/mc-compiled-language-server/bin/Release/net9.0'
-  | append '/usr/local/mcpelauncher-extract/build'
-  | append '/usr/lib/jvm/java-24-openjdk/bin'
-  | append ($nu.home-path | path join '.local/share/nvim/mason/packages/java-language-server')
-  | append ($nu.home-path | path join '.local/bin')
-  | append ($nu.home-path | path join '.nimble/bin')
-  | append ($nu.home-path | path join '.cargo/bin')
-  | append ($nu.home-path | path join '.go/bin')
-  | append ($nu.home-path | path join '.bun/bin')
-  | append ($nu.home-path | path join '.deno/bin')
-  | append ($nu.home-path | path join '.local/share/gem/ruby/3.3.0/bin')
-  | append ($nu.home-path | path join '.local/share/coursier/bin/')
-  | append ($nu.home-path | path join 'Programs/clion-2024.2.2/bin')
-  | append ($nu.home-path | path join 'Programs/idea-IU-243.26053.27/bin')
-  | append ($nu.home-path | path join 'Programs/zig')
-  | append ($nu.home-path | path join 'Programs/zls')
-  | append ($nu.home-path | path join 'Projects/wi')
-  | append ($env.DEVKITPRO | path join 'tools/bin')
-  | append ($env.DEVKITARM | path join 'bin')
-  | append ($env.ANDROID_HOME | path join 'platform-tools')
-  | append ($env.WASMTIME_HOME | path join 'bin')
-  | append ($env.NUPM_HOME | path join "scripts")
-)
-
-# Add latest version of roc to PATH.
-try {
-  $env.PATH = (
-    $env.PATH
-    | split row (char esep)
-    | append (ls ~/Programs/roc_nightly-linux_x86_64* | sort-by modified | last | get name)
-  )
-}
+path add '/usr/local/flutter/bin'
+path add '/usr/local/texlive/2024/bin/x86_64-linux'
+path add '/usr/local/eww/target/release'
+path add '/usr/local/ols'
+path add '/usr/local/MCCompiledSource/mc-compiled-language-server/bin/Release/net9.0'
+path add '/usr/local/mcpelauncher-extract/build'
+path add '/usr/lib/jvm/java-24-openjdk/bin'
+path add ($nu.home-path | path join '.local/share/nvim/mason/packages/java-language-server')
+path add ($nu.home-path | path join '.local/bin')
+path add ($nu.home-path | path join '.nimble/bin')
+path add ($nu.home-path | path join '.cargo/bin')
+path add ($nu.home-path | path join '.go/bin')
+path add ($nu.home-path | path join '.bun/bin')
+path add ($nu.home-path | path join '.deno/bin')
+path add ($nu.home-path | path join '.local/share/gem/ruby/3.3.0/bin')
+path add ($nu.home-path | path join '.local/share/coursier/bin/')
+path add ($nu.home-path | path join 'Programs/clion-2024.2.2/bin')
+path add ($nu.home-path | path join 'Programs/idea-IU-243.26053.27/bin')
+path add ($nu.home-path | path join 'Programs/zig')
+path add ($nu.home-path | path join 'Programs/zls')
+path add ($nu.home-path | path join 'Projects/wi')
+path add ($env.DEVKITPRO | path join 'tools/bin')
+path add ($env.DEVKITARM | path join 'bin')
+path add ($env.ANDROID_HOME | path join 'platform-tools')
+path add ($env.WASMTIME_HOME | path join 'bin')
+path add ($env.NUPM_HOME | path join "scripts")
 
 const secrets_path = ($nu.default-config-dir | path join 'secrets.nu')
 source-env (if ($secrets_path | path exists) { $secrets_path } else { null })
