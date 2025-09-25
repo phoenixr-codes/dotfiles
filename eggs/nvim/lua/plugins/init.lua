@@ -25,7 +25,27 @@ return {
             cterm_color = "25",
             name = "Language"
           },
+          ftl = {
+            icon = "",
+            color = "#74c7ec",
+            cterm_color = "25",
+            name = "Language"
+          },
           mcfunction = {
+            icon = "󰍳",
+            -- icon = "󰿠",
+            color = "#70b237",
+            cterm_color = "2",
+            name = "Minecraft",
+          },
+          mcaddon = {
+            icon = "󰍳",
+            -- icon = "󰿠",
+            color = "#70b237",
+            cterm_color = "2",
+            name = "Minecraft",
+          },
+          mcpack = {
             icon = "󰍳",
             -- icon = "󰿠",
             color = "#70b237",

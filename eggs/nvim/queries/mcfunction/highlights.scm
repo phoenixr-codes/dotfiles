@@ -30,12 +30,13 @@
 ("[")  @punctuation.bracket
 ("]")  @punctuation.bracket
 
-(string)   @string
-(emoji)    @string.escape
-(style)    @string.escape
-(filepath) @string.special.path
-(message)  @string
-(message)  @spell
+(string)        @string
+(quoted_string) @string
+(emoji)         @string.escape
+(style)         @string.escape ; TODO: use @markup.strong etc for §l etc
+(filepath)      @string.special.path
+(message)       @string
+(message)       @spell
 
 
 ;; Subcommands
@@ -169,3 +170,5 @@
 (selector_arg_key) @property
 (selector_variable) @string.special.symbol
 (player_selector) @string.special
+
+(block_state_value) @property

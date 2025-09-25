@@ -47,6 +47,14 @@ if (which glow | is-not-empty) and (input bool "Update Glow?" -y) {
 if (which task | is-not-empty) and (input bool "Update Task?" -y) {
   go install github.com/go-task/task/v3/cmd/task@latest
 }
+if (which ascii-image-converter | is-not-empty) and (input bool "Update ascii-image-converter?" -y) {
+  go install github.com/TheZoraiz/ascii-image-converter@latest
+}
+
+# Flutter
+if (which flutter | is-not-empty) and (input bool "Update Flutter?" -y) {
+  flutter upgrade
+}
 
 # Rust
 if (which rustup | is-not-empty) and (input bool "Update Rust toolchain?" -y) {
