@@ -15,7 +15,7 @@ export let data = #{
 export let eggs = #{
     bat: #{ targets: "~/.config/bat" },
     git: #{ targets: "~/.config/git" },
-    nvim: #{ targets: "~/.config/nvim" },
+    nvim: #{ targets: "~/.config/nvim", strategy: "merge" },
     neofetch: #{ targets: "~/.config/neofetch" },
     rofi: #{ targets: "~/.config/rofi" },
     kitty: #{ targets: "~/.config/kitty", strategy: "merge" },

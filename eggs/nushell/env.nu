@@ -93,3 +93,5 @@ if (which nvim | is-not-empty) {
 } else if (which hx | is-not-empty) {
   $env.EDITOR = "hx"
 }
+
+zoxide init nushell | save -f ~/.zoxide.nu

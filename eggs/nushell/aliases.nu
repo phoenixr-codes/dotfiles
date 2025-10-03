@@ -7,8 +7,9 @@ alias gs = git status
 
 alias copy = xclip -selection clipboard
 
+alias x = nvim
+
 alias ':q' = exit
 
 alias disfire = sudo systemctl stop firewalld
-alias rr      = java -jar ($nu.home-path | path join Programs rr.war)
 alias mcc     = mc-compiled

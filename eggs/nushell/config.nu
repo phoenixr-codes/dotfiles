@@ -122,19 +122,6 @@ def ip [] {
   sys net | where name == wlan0 | first | get ip | where protocol == ipv4 | first | get address
 }
 
-# Launches the default editor.
-#
-# This command respects virtual environments such as Poetry.
-def --wrapped x [
-  ...rest # Arguments passed to the editor as-is
-] {
-  if ("poetry.lock" | path exists) {
-    poetry run $env.EDITOR ...$rest
-  } else {
-    run-external $env.EDITOR ...$rest
-  }
-}
-
 # Launches the yazi file browser.
 def --env y [
   ...args # Arguments passed to yazi as-is
@@ -163,6 +150,7 @@ def scaf [
     | cp -r $in $dest
 }
 
+source ~/.zoxide.nu
 source aliases.nu
 source init.nu
 #source completions.nu
