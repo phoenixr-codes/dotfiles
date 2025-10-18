@@ -5,7 +5,7 @@
 ## Requirements
 
 - [Yolk][] (0.3.4)
-- [Nushell][] (optional, recommended) (0.106.1)
+- [Nushell][] (optional, recommended) (0.108.0)
 
 ## Installation
 

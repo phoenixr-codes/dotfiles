@@ -1,5 +1,9 @@
 # Changelog
 
+## 2025-10-18
+
+- Update Nushell config.
+
 ## 2025-08-25
 
 - Update snippets.

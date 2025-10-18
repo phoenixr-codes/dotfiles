@@ -6,6 +6,7 @@ use std/util "path add"
 $env.ON_ANDROID = ((sys host).long_os_version | str contains "Android")
 
 $env.NUPM_HOME = ($nu.home-path | path join ".nupm")
+$env.NUX_HOME = ($nu.home-path | path join ".nux")
 
 # Specifies how environment variables are:
 # - converted from a string to a value on Nushell startup (from_string)
@@ -56,6 +57,7 @@ $env.MANPAGER = r#'sh -c 'sed -u -e "s/\\x1B\[[0-9;]*m//g; s/.\\x08//g" | bat -p
 
 $env.COM_MOJANG = ($nu.home-path | path join ".local/share/mcpelauncher/games/com.mojang/")
 
+path add ($env.NUX_HOME | path join 'scripts')
 path add '/usr/local/flutter/bin'
 path add '/usr/local/texlive/2024/bin/x86_64-linux'
 path add '/usr/local/eww/target/release'
@@ -83,10 +85,13 @@ path add ($env.ANDROID_HOME | path join 'platform-tools')
 path add ($env.WASMTIME_HOME | path join 'bin')
 path add ($env.NUPM_HOME | path join "scripts")
 
-const secrets_path = ($nu.default-config-dir | path join 'secrets.nu')
-source-env (if ($secrets_path | path exists) { $secrets_path } else { null })
+do {
+  const secrets_path = ($nu.default-config-dir | path join 'secrets.nu')
+  source-env (if ($secrets_path | path exists) { $secrets_path } else { null })
+}
 
 use ($nu.home-path | path join ".nupm/nupm")
+use ($nu.home-path | path join ".nux/packages/Nux/exe/nux.nu")
 
 if (which nvim | is-not-empty) {
   $env.EDITOR = "nvim"

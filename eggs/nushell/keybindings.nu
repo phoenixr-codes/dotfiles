@@ -1,7 +1,6 @@
-export def --env main [] {
+export-env {
   $env.config.keybindings = [
     {
-      # TODO: doesn't seem to work
       name: reload_config
       modifier: none
       keycode: f5

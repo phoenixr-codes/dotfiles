@@ -2,3 +2,4 @@
 /.yolk_git
 /.deployed_cache
 .mypy_cache
+*.bak

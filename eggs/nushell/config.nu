@@ -2,26 +2,8 @@
 #
 # version = "0.88.1"
 
-use keybindings.nu
-
-# {% if data.theme == theme.palenight %}
-#<yolk> source scripts/themes/nu-themes/material-palenight.nu
-#<yolk> if (which kitten | is-not-empty) {
-  #<yolk> try { kitten themes palenight }
-#<yolk> }
-# {% end %}
-# {% if data.theme == theme.catppuccin_frappe %}
-#<yolk> source scripts/themes/nu-themes/catppuccin-frappe.nu
-#<yolk> if (which kitten | is-not-empty) {
-  #<yolk> try { kitten themes Catppuccin-Frappe }
-#<yolk> }
-# {% end %}
-# {% if data.theme == theme.catppuccin_mocha %}
-source scripts/themes/nu-themes/catppuccin-mocha.nu
-if (which kitten | is-not-empty) {
-try { kitten themes Catppuccin-Mocha }
-}
-# {% end %}
+source keybindings.nu
+use theme.nu
 
 $env.config = {
   show_banner: false
@@ -116,6 +98,8 @@ $env.config = {
     }
   ]
 }
+
+theme apply
 
 # Evaluates the WLAN0 IPv4 address.
 def ip [] {
