@@ -28,6 +28,7 @@ $env.ENV_CONVERSIONS = {
 $env.NU_LIB_DIRS = [
   ($nu.default-config-dir | path join 'scripts')
   ($env.NUPM_HOME | path join "modules")
+  ...($env.NUX_HOME | path join "packages/*/*/lib" | glob $in)
 ]
 
 # Directories to search for plugin binaries when calling register
@@ -91,7 +92,7 @@ do {
 }
 
 use ($nu.home-path | path join ".nupm/nupm")
-use ($nu.home-path | path join ".nux/packages/Nux/exe/nux.nu")
+use ($nu.home-path | path join ".nux/packages/Nux/0.1.0/exe/nux")
 
 if (which nvim | is-not-empty) {
   $env.EDITOR = "nvim"

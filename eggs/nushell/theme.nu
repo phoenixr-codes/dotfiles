@@ -3,11 +3,7 @@
 def should-apply [
   theme_name: string
 ]: nothing -> bool {
-  yolk eval $"data.theme == theme.($theme_name)" | from json
-}
-
-def themes [] {
-  yolk eval "theme.to_json()" | from json | columns
+  yolk eval $"data.theme == theme.($theme_name)" | into bool
 }
 
 # Apply a theme on Nushell and Kitty.

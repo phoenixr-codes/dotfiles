@@ -7,6 +7,38 @@ export def brightness []: nothing -> float {
   $actual_brightness / $maximum_brightness
 }
 
+export def "brightness set" [
+  value: float
+]: nothing -> nothing {
+  light -S ($value * 100)
+}
+
+# Increase the brightness by the given amount.
+export def "brightness increase" [
+  value: float         # The percentage to increase the brightness by
+  --duration: duration # Dynamically increase the brightness with the given duration
+]: nothing -> nothing {
+  job spawn --tag "change-brightness" {
+    let duration = if ($duration == null) { 0ns } else { $duration }
+    let steps = 10
+    let initial_brightness = brightness
+    for step in 1..$steps {
+      let new_brightness = $initial_brightness + $step * $value / $steps
+      sleep ($duration / $steps)
+      brightness set $new_brightness
+    }
+  }
+  null
+}
+
+# Decrease the brightness by the given amount.
+export def "brightness decrease" [
+  value: float         # The percentage to decrease the brightness by
+  --duration: duration # Dynamically decrease the brightness with the given duration
+]: nothing -> nothing {
+  brightness increase (-1 * $value) --duration $duration
+}
+
 # Return the current volume between 0 and 1.
 export def volume []: nothing -> float {
   (
