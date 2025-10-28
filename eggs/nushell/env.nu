@@ -56,7 +56,8 @@ $env.GOBIN = ($nu.home-path | path join '.go/bin')
 
 $env.MANPAGER = r#'sh -c 'sed -u -e "s/\\x1B\[[0-9;]*m//g; s/.\\x08//g" | bat -p -lman''#
 
-$env.COM_MOJANG = ($nu.home-path | path join ".local/share/mcpelauncher/games/com.mojang/")
+#$env.COM_MOJANG = ($nu.home-path | path join ".local/share/mcpelauncher/games/com.mojang/")
+$env.COM_MOJANG = ($nu.home-path | path join ".var/app/io.mrarm.mcpelauncher/data/mcpelauncher/games/com.mojang")
 
 path add ($env.NUX_HOME | path join 'scripts')
 path add '/usr/local/flutter/bin'

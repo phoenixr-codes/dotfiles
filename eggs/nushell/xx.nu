@@ -17,10 +17,11 @@ export def "brightness set" [
 export def "brightness increase" [
   value: float         # The percentage to increase the brightness by
   --duration: duration # Dynamically increase the brightness with the given duration
+  # TODO: easings other than linear
 ]: nothing -> nothing {
   job spawn --tag "change-brightness" {
     let duration = if ($duration == null) { 0ns } else { $duration }
-    let steps = 10
+    let steps = 50
     let initial_brightness = brightness
     for step in 1..$steps {
       let new_brightness = $initial_brightness + $step * $value / $steps
