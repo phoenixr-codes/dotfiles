@@ -23,13 +23,13 @@ return {
             icon = "",
             color = "#74c7ec",
             cterm_color = "25",
-            name = "Language"
+            name = "Language",
           },
           ftl = {
             icon = "",
             color = "#74c7ec",
             cterm_color = "25",
-            name = "Language"
+            name = "Language",
           },
           mcfunction = {
             icon = "󰍳",
@@ -58,7 +58,7 @@ return {
             color = "#70b237",
             cterm_color = "2",
             name = "Minecraft",
-          }
+          },
         },
       }
     end,
@@ -164,6 +164,7 @@ return {
   },
 
   { "nvzone/volt", lazy = true },
+  { "nvzone/menu", lazy = true },
 
   {
     "nvzone/minty",

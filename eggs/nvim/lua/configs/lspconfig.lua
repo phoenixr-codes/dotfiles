@@ -57,29 +57,13 @@ lspconfig("ts_ls", {
 })
 vim.lsp.enable "ts_ls"
 
-lspconfig("denols", {
-  on_attach = nvlsp.on_attach,
-  on_init = nvlsp.on_init,
-  --root_markers = { { "deno.json", "deno.jsonc" } },
-  root_dir = function(bufnr, on_dir)
-    -- HACK: This normally shouldn't be necessary and is required likely due to
-    --       an issue in denols, ts_ls or vim.lsp. This snippet is copied from
-    --       the default ts_ls.root_dir and modified appropriately. If this is
-    --       not present, then denols is always preferred over ts_ls with the
-    --       project root being nil. An alternative would be to manually start
-    --       the LSPs accordingly but that would be very cumbersome.
-
-    local root_markers = { "deno.json", "deno.jsonc" }
-    -- Give the root markers equal priority by wrapping them in a table
-    root_markers = vim.fn.has "nvim-0.11.3" == 1 and { root_markers, { ".git" } }
-      or vim.list_extend(root_markers, { ".git" })
-    -- We fallback to the current working directory if no project root is found
-    local project_root = vim.fs.root(bufnr, root_markers) or vim.fn.getcwd()
-
-    on_dir(project_root)
-  end,
-})
-vim.lsp.enable "denols"
+-- lspconfig("denols", {
+--   on_attach = nvlsp.on_attach,
+--   on_init = nvlsp.on_init,
+--   root_markers = { { "deno.json", "deno.jsonc" } },
+--   capabilities = nvlsp.capabilities,
+-- })
+-- vim.lsp.enable "denols"
 
 lspconfig("taplo", {
   settings = {

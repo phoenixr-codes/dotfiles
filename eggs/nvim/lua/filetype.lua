@@ -5,6 +5,7 @@ ft.add {
     lang = "mclang",
     mcc = "mccompiled",
     mcfunction = "mcfunction",
+    nuon = "nu",
     pest = "pest",
   }
 }

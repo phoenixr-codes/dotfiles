@@ -1,5 +1,9 @@
 # Changelog
 
+## 2025-11-24
+
+- Classify `*.nuon` files as Nushell.
+
 ## 2025-10-18
 
 - Update Nushell config.
