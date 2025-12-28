@@ -1,18 +1,6 @@
 #!/usr/bin/env nu
 
 # TODO: only install, when there is a more recent version
-# TODO: use `input list --multi` instead of asking at every single step
-
-def "input bool" [prompt: string, --default-yes (-y)]: nothing -> bool {
-  loop {
-    let answer = input --numchar 1 --suppress-output --default (if $default_yes { "y" } else { "n" }) $"($prompt) [y/n]" | str downcase
-    print ""
-    if $answer == "y" { return true }
-    if $answer == "n" { return false }
-    if $answer == "" { return $default_yes }
-  }
-  false
-}
 
 const palette = {
   rosewater: "#f5e0dc"
@@ -32,64 +20,29 @@ const palette = {
 }
 
 print ("up.nu - System Updater" | ansi gradient --fgstart ($palette.red | str replace --regex "^#" "0x") --fgend ($palette.yellow | str replace --regex "^#" "0x"))
+print "Select what you want to update"
+[
+  [icon color label dependencies callback];
+  ["󰒋" $palette.pink "System"                [eos-update] { eos-update --yay }]
 
-# System
-if (which eos-update | is-not-empty) and (input bool "Perform system update?" -y) {
-  eos-update --yay
-}
+  ["" $palette.sapphire "VHS"                   [go]         { go install github.com/charmbracelet/vhs@latest }]
+  ["" $palette.sapphire "Glow"                  [go]         { go install github.com/charmbracelet/glow@latest }]
+  ["" $palette.sapphire "Task"                  [go]         { go install github.com/go-task/task/v3/cmd/task@latest }]
+  ["" $palette.sapphire "ascii-image-converter" [go]         { go install github.com/TheZoraiz/ascii-image-converter@latest }]
 
-# Go programs
-if (which vhs | is-not-empty) and (input bool "Update VHS?" -y) {
-  go install github.com/charmbracelet/vhs@latest
-}
-if (which glow | is-not-empty) and (input bool "Update Glow?" -y) {
-  go install github.com/charmbracelet/glow@latest
-}
-if (which task | is-not-empty) and (input bool "Update Task?" -y) {
-  go install github.com/go-task/task/v3/cmd/task@latest
-}
-if (which ascii-image-converter | is-not-empty) and (input bool "Update ascii-image-converter?" -y) {
-  go install github.com/TheZoraiz/ascii-image-converter@latest
-}
+  ["" $palette.sky "Flutter"               [flutter]    { flutter upgrade }]
+  ["" $palette.peach "Rust"                  [rustup]     { rustup update }]
+  ["" $palette.yellow "Deno"                  [deno]       { deno upgrade }]
+  ["" $palette.pink "Bun"                   [bun]        { bun upgrade }]
 
-# Flutter
-if (which flutter | is-not-empty) and (input bool "Update Flutter?" -y) {
-  flutter upgrade
-}
+  ["󰪯" $palette.yellow "Yolk"                  [cargo]      { cargo install --force --locked yolk_dots }]
+  ["" $palette.peach "mdBook"                [cargo]      { cargo install --force --locked mdbook }]
+  ["" $palette.green "Nushell"               [cargo]      { cargo install --force --locked nu }]
+  ["" $palette.peach "evcxr"                 [cargo]      { cargo install --force --locked evcxr_repl }]
+  ["" $palette.sky "Typst"                 [cargo]      { cargo install --force --locked typst-cli }]
 
-# Rust
-if (which rustup | is-not-empty) and (input bool "Update Rust toolchain?" -y) {
-  rustup update
-}
-
-# Crates
-if (which yolk | is-not-empty) and (input bool "Update yolk?" -y) {
-  cargo install --force --locked yolk_dots
-}
-if (which mdbook | is-not-empty) and (input bool "Update mdBook?" -y) {
-  cargo install --force --locked mdbook
-}
-if (which nu | is-not-empty) and (input bool "Update Nushell?" -y) {
-  cargo install --force --locked nu
-}
-if (which evcxr | is-not-empty) and (input bool "Update evcxr?" -y) {
-  cargo install --force --locked evcxr_repl
-}
-if (which typst | is-not-empty) and (input bool "Update typst?" -y) {
-  cargo install --locked typst-cli
-}
-
-# Python programs
-if (which rofimoji | is-not-empty) and (input bool "Update rofimoji?" -y) {
-  pipx install --force git+https://github.com/fdw/rofimoji.git
-}
-
-# Deno
-if (which deno | is-not-empty) and (input bool "Update Deno?" -y) {
-  deno upgrade
-}
-
-# Bun
-if (which bun | is-not-empty) and (input bool "Update Bun?" -y) {
-  bun upgrade
-}
+  ["" $palette.yellow "rofimoji"              [pipx]       { pipx install --force git+https://github.com/fdw/rofimoji.git }]
+] | where { $in.dependencies | all { which $in | is-not-empty } }
+  | each { $in | update label $"(ansi --escape {fg: $in.color})($in.icon) ($in.label)(ansi reset)" }
+  | input list --multi --display label
+  | each { try { do $in.callback; $in.label } catch { null } }
