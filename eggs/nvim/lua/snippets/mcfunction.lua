@@ -7,12 +7,12 @@ return {
   snip({ trig = "if", name = "execute if" }, {
     t "execute if ",
     i(1, "condition"),
-    t " run "
+    t " run ",
   }),
   snip({ trig = "unless", name = "execute unless" }, {
     t "execute unless ",
     i(1, "condition"),
-    t " run "
+    t " run ",
   }),
   snip({ trig = "scb-obj-add", name = "scoreboard objectives add", desc = "Adds a new scoreboard objective" }, {
     t "scoreboard objectives add ",
@@ -35,5 +35,4 @@ return {
     t " ",
     i(3, "amount"),
   }),
-
 }

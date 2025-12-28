@@ -1,6 +1,7 @@
 #!/usr/bin/env nu
 
 # TODO: only install, when there is a more recent version
+# TODO: use `input list --multi` instead of asking at every single step
 
 def "input bool" [prompt: string, --default-yes (-y)]: nothing -> bool {
   loop {

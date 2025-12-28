@@ -14,6 +14,8 @@ export def "brightness set" [
 }
 
 # Increase the brightness by the given amount.
+@example "Increase the brightness dynamically by 10%" { brightness increase 0.10 --duration 0.5sec }
+@example "Increase the brightness statically by 10%" { brightness increase 0.10 }
 export def "brightness increase" [
   value: float         # The percentage to increase the brightness by
   --duration: duration # Dynamically increase the brightness with the given duration
@@ -33,6 +35,8 @@ export def "brightness increase" [
 }
 
 # Decrease the brightness by the given amount.
+@example "Decrease the brightness dynamically by 10%" { brightness decrease 0.10 --duration 0.5sec }
+@example "Decrease the brightness statically by 10%" { brightness decrease 0.10 }
 export def "brightness decrease" [
   value: float         # The percentage to decrease the brightness by
   --duration: duration # Dynamically decrease the brightness with the given duration
@@ -60,6 +64,10 @@ export def "volume muted" []: nothing -> bool {
   | from json
   | last
   | get mute
+}
+
+export def "wlan strength" []: nothing -> float {
+  (nmcli -c no -t -f ACTIVE,SIGNAL dev wifi | from csv --noheaders --separator ":" | rename active signal | where active == yes | first | get signal) / 100
 }
 
 # Return whether a connection to a WLAN is established.

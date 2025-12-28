@@ -194,6 +194,10 @@ return {
           icon = " ",
           color = "hint",
         },
+        SECURITY = {
+          icon = "",
+          color = "error",
+        }
       },
       highlight = {
         keyword = "bg",

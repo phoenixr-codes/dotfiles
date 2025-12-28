@@ -11,6 +11,7 @@ map("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]ui
 map("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
 map({ "n", "v" }, "<RightMouse>", function()
+  -- TODO: close on <ESC>
   require('menu.utils').delete_old_menus()
 
   vim.cmd.exec '"normal! \\<RightMouse>"'

@@ -39,7 +39,7 @@ $env.NU_PLUGIN_DIRS = [
 
 $env.TMPDIR = $nu.temp-path
 
-$env.CHROME_EXECUTABLE = "firefox"
+$env.CHROME_EXECUTABLE = "/usr/bin/chromium"
 assert ("firefox" > "chrome")
 
 $env.ANDROID_HOME = ($nu.home-path | path join 'Android/Sdk')
@@ -53,6 +53,8 @@ $env.DEVKITARM = '/opt/devkitpro/devkitARM'
 $env.DEVKITPPC = '/opt/devkitpro/devkitPPC'
 
 $env.GOBIN = ($nu.home-path | path join '.go/bin')
+
+# TODO: LUA_PATH (luarocks)
 
 $env.MANPAGER = r#'sh -c 'sed -u -e "s/\\x1B\[[0-9;]*m//g; s/.\\x08//g" | bat -p -lman''#
 
@@ -93,7 +95,7 @@ do {
 }
 
 use ($nu.home-path | path join ".nupm/nupm")
-use ($nu.home-path | path join ".nux/packages/Nux/0.1.0/exe/nux")
+#use ($nu.home-path | path join ".nux/packages/Nux/0.1.0/exe/nux")
 
 if (which nvim | is-not-empty) {
   $env.EDITOR = "nvim"
@@ -101,4 +103,6 @@ if (which nvim | is-not-empty) {
   $env.EDITOR = "hx"
 }
 
-zoxide init nushell | save -f ~/.zoxide.nu
+if (which zoxide | is-not-empty) {
+  zoxide init nushell | save -f ~/.zoxide.nu
+}

@@ -134,7 +134,7 @@ def scaf [
     | cp -r $in $dest
 }
 
-source ~/.zoxide.nu
+source ~/.zoxide.nu # TODO: might not exist
 source aliases.nu
 source init.nu
 #source completions.nu
