@@ -37,6 +37,9 @@ $env.NU_PLUGIN_DIRS = [
   ($nu.default-config-dir | path join 'plugins') # add <nushell-config-dir>/plugins
 ]
 
+$env.NU_LOG_DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
+$env.NU_LOG_FORMAT = "%ANSI_START%%DATE% %LEVEL% | %MSG%%ANSI_STOP%"
+
 $env.TMPDIR = $nu.temp-path
 
 $env.CHROME_EXECUTABLE = "/usr/bin/chromium"
