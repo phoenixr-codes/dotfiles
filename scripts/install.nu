@@ -74,7 +74,7 @@ def main [
   --simulate (-n) # Do not actually make any filesystem changes
 ]: nothing -> nothing {
   if ($simulate) {
-    log info "Simulate mode is on"
+    log info "Simulate mode is enabled: No filesystem changes will be made."
   }
 
   print ($title | ansi gradient --fgstart ($palette.red | str replace --regex "^#" "0x") --fgend ($palette.yellow | str replace --regex "^#" "0x"))
