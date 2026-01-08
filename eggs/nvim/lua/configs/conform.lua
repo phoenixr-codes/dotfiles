@@ -1,12 +1,16 @@
 local options = {
   formatters_by_ft = {
+    c = { "clang-format" },
     lua = { "stylua" },
     css = { "prettier" },
     html = { "prettier" },
     typescript = { "prettier" },
     javascript = { "prettier" },
     java = { "astyle" },
-    python = { "ruff" },
+    python = {
+      "isort", -- see also: https://docs.astral.sh/ruff/formatter/#sorting-imports
+      "ruff"
+    },
     nim = { "nimpretty" },
     typst = { "typstyle" },
   },
