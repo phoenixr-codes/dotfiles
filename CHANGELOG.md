@@ -5,7 +5,6 @@
 - Remove spell files from neovim
 - Add rhai tree-sitter
 - Update nerdfont related stuff
-- Make neovim background transparent
 - Highlight all keywords the same color in neovim
 
 ## 2025-11-24

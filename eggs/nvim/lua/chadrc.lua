@@ -7,7 +7,7 @@ local M = {}
 M.base46 = {
   theme = "catppuccin",
   theme_toggle = { "catppuccin", "material-lighter" },
-  transparency = true,
+  transparency = false,
   hl_override = {
     -- By default, different colors are applied to different kinds of
     -- keywords. I like keeping all keywords the same color.

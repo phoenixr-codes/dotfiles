@@ -64,11 +64,11 @@ typst compile --format "svg" scripts/logo.typ logo.svg
 - [ ] Yazi use nvim instead of nano
 - [ ] Screen recorder
 - [ ] Indent of 4 spaces for C
-- [ ] custom ts highlight coloring + todo plugin colors
+- [x] custom ts highlight coloring + todo plugin colors
 - [ ] Autostart btop and put it in workspace 5 (tux)
 - [ ] Download nupm in installation script or have it as a git submodule.
 - [ ] Move third-party applications to `/opt`.
-- [ ] Put dwm cheat sheet source in config and compile in Makefile.
+- [x] Put dwm cheat sheet source in config and compile in Makefile.
 - [ ] Screen saver/lock (see also: `xss-lock` & `xset s ...`)
 - [ ] Run entries in `~/.config/autostart/` on startup.
 - [ ] Rework dwm keybindings.
@@ -86,7 +86,6 @@ typst compile --format "svg" scripts/logo.typ logo.svg
 - [x] Don't require Super key for function keys in dwm.
 - [x] Move non-config and non-env stuff to a `init.nu` file which will be invoked by `config.nu`.
 - [x] Log out when lock button is pressed `dm-tool switch-to-greeter`.
-- [ ] The `x` alias does not expand paths (e.g. `x ~/foo`).
 - [x] Fix issue with pkg updates in dwm bar.
 - [ ] Bind fn keys.
 - [x] Configure emoji selection apps and localsend to float in dwm.
