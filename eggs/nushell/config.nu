@@ -123,7 +123,7 @@ def --env y [
 def scaf [
   dest: path = .
 ]: nothing -> nothing {
-  let templates_dir = $nu.home-path | path join Templates
+  let templates_dir = $nu.home-dir | path join Templates
   let prompt = "Select a template"
     | ansi gradient --fgstart '0x40c9ff' --fgend '0xe81cff'
   $templates_dir

@@ -2,7 +2,7 @@
 
 do {
   # Fetch a quote each day.
-  let motd_dir = ($nu.home-path | path join ".cache")
+  let motd_dir = ($nu.home-dir | path join ".cache")
   let motd_path = ($motd_dir | path join "motd.txt")
   let motd_is_old = if ($motd_path | path exists) {
     ((date now) - (ls $motd_path | first).modified) > 1day
@@ -15,7 +15,7 @@ do {
     try {
       # do not make a request in case we have no wifi
       let motd = (http get --max-time 2sec https://zenquotes.io/api/random/ | first)
-      $"($motd.q)\n~ ($motd.a)" | save -f ($nu.home-path | path join $motd_path)
+      $"($motd.q)\n~ ($motd.a)" | save -f ($nu.home-dir | path join $motd_path)
     }
   }
 

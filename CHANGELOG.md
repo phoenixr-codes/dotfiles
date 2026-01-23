@@ -6,6 +6,7 @@
 - Add rhai tree-sitter
 - Update nerdfont related stuff
 - Highlight all keywords the same color in neovim
+- Update Nushell
 
 ## 2025-11-24
 
@@ -28,7 +29,7 @@
 - Add more WLAN related commands for `xx`.
 - Add custom tree sitter grammar for `mcfunction` in Neovim.
 - Configure icons for `.mcfunction` and `.lang` files in Neovim.
-- Minor updates in NuShell configurations.
+- Minor updates in Nushell configurations.
 - Add `mkfile` command.
 
 ## 2025-08-06
@@ -198,7 +199,7 @@
 ## 2025-03-20
 
 - Added bash lsp.
-- Switched to NuShell in neovim.
+- Switched to Nushell in neovim.
 - Enabled cursorline in neovim.
 - Added Termux/Android specific configuration.
 - Only launch starship when installed.
