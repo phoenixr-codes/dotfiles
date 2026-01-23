@@ -7,8 +7,6 @@ alias gs = git status
 
 alias copy = xclip -selection clipboard
 
-alias x = nvim
-
 alias ':q' = exit
 
 alias disfire = sudo systemctl stop firewalld

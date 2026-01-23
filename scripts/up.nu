@@ -41,6 +41,7 @@ print "Select what you want to update"
   ["󰪯"  $palette.yellow   "Yolk"                  [cargo]      { cargo install --force --locked yolk_dots }]
   [""  $palette.peach    "mdBook"                [cargo]      { cargo install --force --locked mdbook }]
   [""  $palette.green    "Nushell"               [cargo]      { cargo install --force --locked nu }]
+  [""  $palette.green    "Starship"              [cargo]      { cargo install --force --locked starship }]
   [""  $palette.peach    "evcxr"                 [cargo]      { cargo install --force --locked evcxr_repl }]
   [""  $palette.sky      "Typst"                 [cargo]      { cargo install --force --locked typst-cli }]
 
@@ -49,4 +50,4 @@ print "Select what you want to update"
   | each { $in | update label $"(ansi --escape {fg: $in.color})($in.icon) ($in.label)(ansi reset)" }
   | input list --multi --display label
   | each { |item| try { do $item.callback; log info $"Successfully updated ($item.label)"; true } catch { log error $"Failed to update ($item.label)"; false } }
-  | print $"Updated ($in | where $it | length) of ($in | where not $it | length)"
+  | print $"Updated ($in | where $it | length) successfully, ($in | where not $it | length) failed"

@@ -38,7 +38,7 @@ $env.NU_PLUGIN_DIRS = [
 ]
 
 $env.NU_LOG_DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
-$env.NU_LOG_FORMAT = "%ANSI_START%%DATE% %LEVEL% | %MSG%%ANSI_STOP%"
+$env.NU_LOG_FORMAT = "%ANSI_START%[ %DATE% %LEVEL% ]%ANSI_STOP% %MSG%"
 
 $env.TMPDIR = $nu.temp-path
 

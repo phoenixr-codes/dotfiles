@@ -60,6 +60,7 @@ typst compile --format "svg" scripts/logo.typ logo.svg
 
 ## TODO
 
+- [ ] Nushell supports clipboard in std lib
 - [ ] Yazi use nvim instead of nano
 - [ ] Screen recorder
 - [ ] Indent of 4 spaces for C

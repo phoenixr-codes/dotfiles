@@ -1,3 +1,5 @@
+scan_timeout = 60
+
 palette = "catppuccin_mocha"
 
 [palettes.catppuccin_latte]
@@ -194,6 +196,12 @@ symbol = " "
 
 [nodejs]
 symbol = " "
+
+[deno]
+symbol = " "
+
+[bun]
+symbol = " "
 
 [os.symbols]
 Alpaquita = " "
