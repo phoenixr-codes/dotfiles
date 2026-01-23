@@ -1,5 +1,3 @@
-// vim: set syntax=javascript :
-
 export let theme = #{
   catppuccin_mocha: "Catppuccin Mocha",
   catppuccin_frappe: "Catppuccin Frappe",

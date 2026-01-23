@@ -7,5 +7,6 @@ ft.add {
     mcfunction = "mcfunction",
     nuon = "nu",
     pest = "pest",
+    rhai = "rhai",
   }
 }

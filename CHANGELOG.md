@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-01-23
+
+- Remove spell files from neovim
+- Add rhai tree-sitter
+- Update nerdfont related stuff
+
 ## 2025-11-24
 
 - Classify `*.nuon` files as Nushell.
