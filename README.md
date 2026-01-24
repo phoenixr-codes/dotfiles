@@ -60,6 +60,7 @@ typst compile --format "svg" scripts/logo.typ logo.svg
 
 ## TODO
 
+- [ ] Take into account volume on different channels (e.g. headphones)
 - [ ] Nushell supports clipboard in std lib
 - [ ] Yazi use nvim instead of nano
 - [ ] Screen recorder
@@ -80,7 +81,7 @@ typst compile --format "svg" scripts/logo.typ logo.svg
 - [ ] Include umlauts in `nvim-cmp`.
 - [x] Bitwarden in floating mode.
 - [ ] Display weather on terminal launch.
-- [ ] zenquotes support daily api endpoint.
+- [x] zenquotes support daily api endpoint.
 - [x] Starship theme.
 - [x] Make use of git submodules for themes provided by GitHub repositories for example.
 - [x] Don't require Super key for function keys in dwm.

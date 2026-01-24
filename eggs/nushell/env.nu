@@ -64,7 +64,6 @@ $env.MANPAGER = r#'sh -c 'sed -u -e "s/\\x1B\[[0-9;]*m//g; s/.\\x08//g" | bat -p
 #$env.COM_MOJANG = ($nu.home-dir | path join ".local/share/mcpelauncher/games/com.mojang/")
 $env.COM_MOJANG = ($nu.home-dir | path join ".var/app/io.mrarm.mcpelauncher/data/mcpelauncher/games/com.mojang")
 
-path add ($env.NUX_HOME | path join 'scripts')
 path add '/usr/local/flutter/bin'
 path add '/usr/local/texlive/2024/bin/x86_64-linux'
 path add '/usr/local/eww/target/release'
@@ -90,15 +89,13 @@ path add ($env.DEVKITPRO | path join 'tools/bin')
 path add ($env.DEVKITARM | path join 'bin')
 path add ($env.ANDROID_HOME | path join 'platform-tools')
 path add ($env.WASMTIME_HOME | path join 'bin')
+path add ($env.NUX_HOME | path join 'scripts')
 #path add ($env.NUPM_HOME | path join "scripts")
 
 do {
   const secrets_path = ($nu.default-config-dir | path join 'secrets.nu')
   source-env (if ($secrets_path | path exists) { $secrets_path } else { null })
 }
-
-#use ($nu.home-dir | path join ".nupm/nupm")
-#use ($nu.home-dir | path join ".nux/packages/Nux/0.1.0/exe/nux")
 
 if (which nvim | is-not-empty) {
   $env.EDITOR = "nvim"

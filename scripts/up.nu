@@ -2,6 +2,7 @@
 
 # TODO: only install, when there is a more recent version
 
+use std iter
 use std log
 
 const palette = {
@@ -21,8 +22,23 @@ const palette = {
   lavender:  "#b4befe"
 }
 
+# Checks if a newer version of a crate exists.
+def "check-update crate" [current_version: string]: string -> bool {
+  let exe_name = $in
+  let binaries = cargo install --list | lines
+  let crate_index = ($binaries | iter find-index { ($in | str trim) == $exe_name }) - 1
+  let associated_crate = $binaries | get $crate_index | parse --regex '(?P<crate>\S+) v(?P<installed_version>[^\s:]+)(?: \((?P<source>[^)]+)\))?'
+  let crate_name = $associated_crate.crate
+  let latest_version = cargo search $crate_name
+    | from toml
+    | transpose crate latest_version
+    | where crate == $crate_name
+    | get latest_version
+  # TODO: compare semver versions
+  true
+}
+
 print ("up.nu - System Updater" | ansi gradient --fgstart ($palette.red | str replace --regex "^#" "0x") --fgend ($palette.yellow | str replace --regex "^#" "0x"))
-print "Select what you want to update"
 [
   [icon color             label                   dependencies callback];
   ["󰒋"  $palette.pink     "System"                [eos-update] { yay --noconfirm }]
@@ -48,6 +64,6 @@ print "Select what you want to update"
   ["" $palette.yellow    "rofimoji"              [pipx]       { pipx install --force git+https://github.com/fdw/rofimoji.git }]
 ] | where { $in.dependencies | all { which $in | is-not-empty } }
   | each { $in | update label $"(ansi --escape {fg: $in.color})($in.icon) ($in.label)(ansi reset)" }
-  | input list --multi --display label
+  | input list --multi --display label "Select what you want to update"
   | each { |item| try { do $item.callback; log info $"Successfully updated ($item.label)"; true } catch { log error $"Failed to update ($item.label)"; false } }
   | print $"Updated ($in | where $it | length) successfully, ($in | where not $it | length) failed"

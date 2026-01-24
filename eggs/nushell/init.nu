@@ -1,5 +1,6 @@
-#!/usr/bin/env nu
+# Code run at start-up that is not related to Nushell's configuration.
 
+# This IIFE prevents bindings to be brought into scope
 do {
   # Fetch a quote each day.
   let motd_dir = ($nu.home-dir | path join ".cache")
@@ -14,7 +15,7 @@ do {
   if $motd_is_old {
     try {
       # do not make a request in case we have no wifi
-      let motd = (http get --max-time 2sec https://zenquotes.io/api/random/ | first)
+      let motd = (http get --max-time 2sec https://zenquotes.io/api/today/ | first)
       $"($motd.q)\n~ ($motd.a)" | save -f ($nu.home-dir | path join $motd_path)
     }
   }

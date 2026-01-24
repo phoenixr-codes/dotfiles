@@ -1,5 +1,3 @@
-# TODO: only affects terminal
-
 def should-apply [
   theme_name: string
 ]: nothing -> bool {

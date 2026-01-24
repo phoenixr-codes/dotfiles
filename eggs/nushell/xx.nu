@@ -66,6 +66,11 @@ export def "volume muted" []: nothing -> bool {
   | get mute
 }
 
+# Evaluates the WLAN0 IPv4 address.
+export def "wlan ip" [] {
+  sys net | where name == wlan0 | first | get ip | where protocol == ipv4 | first | get address
+}
+
 export def "wlan strength" []: nothing -> float {
   (nmcli -c no -t -f ACTIVE,SIGNAL dev wifi | from csv --noheaders --separator ":" | rename active signal | where active == yes | first | get signal) / 100
 }
