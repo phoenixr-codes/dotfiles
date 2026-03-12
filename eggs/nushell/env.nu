@@ -40,6 +40,8 @@ $env.NU_PLUGIN_DIRS = [
 $env.NU_LOG_DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 $env.NU_LOG_FORMAT = "%ANSI_START%[ %DATE% %LEVEL% ]%ANSI_STOP% %MSG%"
 
+$env.SHELL = $nu.current-exe
+
 $env.TMPDIR = $nu.temp-dir
 
 $env.CHROME_EXECUTABLE = "/usr/bin/chromium"
@@ -65,11 +67,8 @@ $env.MANPAGER = r#'sh -c 'sed -u -e "s/\\x1B\[[0-9;]*m//g; s/.\\x08//g" | bat -p
 $env.COM_MOJANG = ($nu.home-dir | path join ".var/app/io.mrarm.mcpelauncher/data/mcpelauncher/games/com.mojang")
 
 path add '/usr/local/flutter/bin'
+path add '/usr/local/bin'
 path add '/usr/local/texlive/2024/bin/x86_64-linux'
-path add '/usr/local/eww/target/release'
-path add '/usr/local/ols'
-path add '/usr/local/MCCompiledSource/mc-compiled-language-server/bin/Release/net9.0'
-path add '/usr/local/mcpelauncher-extract/build'
 path add '/usr/lib/jvm/java-24-openjdk/bin'
 path add ($nu.home-dir | path join '.local/share/nvim/mason/packages/java-language-server')
 path add ($nu.home-dir | path join '.local/bin')
@@ -83,6 +82,8 @@ path add ($nu.home-dir | path join '.local/share/coursier/bin/')
 path add ($nu.home-dir | path join 'Programs/clion-2024.2.2/bin')
 path add ($nu.home-dir | path join 'Programs/idea-IU-243.26053.27/bin')
 path add ($nu.home-dir | path join 'Programs/zig')
+path add ($nu.home-dir | path join 'Programs/FontPatcher')
+path add ($nu.home-dir | path join 'Projects/Odin')
 path add ($nu.home-dir | path join 'Projects/zls/zig-out/bin')
 path add ($nu.home-dir | path join 'Projects/wi')
 path add ($env.DEVKITPRO | path join 'tools/bin')

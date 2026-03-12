@@ -9,6 +9,8 @@ M.base46 = {
   theme_toggle = { "catppuccin", "material-lighter" },
   transparency = false,
   hl_override = {
+    ["@character"] = { link = "@string" }, -- FIXME: does not work
+
     -- By default, different colors are applied to different kinds of
     -- keywords. I like keeping all keywords the same color.
     ["@keyword.exception"] = { link = "@keyword" },

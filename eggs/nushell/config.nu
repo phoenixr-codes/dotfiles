@@ -8,13 +8,16 @@ use theme.nu
 $env.config = {
   show_banner: false
   rm: {
-    always_trash: ("trash-support" in (version).features)
+    always_trash: ("trash-support" in (version).features) # FIXME: Android build does mention `trash-support` in version output, but does not actually have it
   }
   error_style: "fancy"
   completions: {
     external: {
       max_results: 20
     }
+  }
+  hooks: {
+    display_output: "if (term size).columns >= 100 { table --icons --expand } else { table --icons }"
   }
   cursor_shape: {
     emacs: "line"

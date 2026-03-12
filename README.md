@@ -13,7 +13,7 @@
 
 Execute the following command in a Nushell REPL:
 
-```nu
+```nushell
 http get "https://raw.githubusercontent.com/phoenixr-codes/dotfiles/refs/heads/main/scripts/install.nu" | nu -c $"($in); main"
 ```
 
@@ -60,6 +60,8 @@ typst compile --format "svg" scripts/logo.typ logo.svg
 
 ## TODO
 
+- [ ] `clean` script for cleaning caches etc.
+- [ ] Migrate from light to clight
 - [ ] Take into account volume on different channels (e.g. headphones)
 - [ ] Nushell supports clipboard in std lib
 - [ ] Yazi use nvim instead of nano

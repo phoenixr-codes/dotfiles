@@ -22,22 +22,6 @@ const palette = {
   lavender:  "#b4befe"
 }
 
-# Checks if a newer version of a crate exists.
-def "check-update crate" [current_version: string]: string -> bool {
-  let exe_name = $in
-  let binaries = cargo install --list | lines
-  let crate_index = ($binaries | iter find-index { ($in | str trim) == $exe_name }) - 1
-  let associated_crate = $binaries | get $crate_index | parse --regex '(?P<crate>\S+) v(?P<installed_version>[^\s:]+)(?: \((?P<source>[^)]+)\))?'
-  let crate_name = $associated_crate.crate
-  let latest_version = cargo search $crate_name
-    | from toml
-    | transpose crate latest_version
-    | where crate == $crate_name
-    | get latest_version
-  # TODO: compare semver versions
-  true
-}
-
 print ("up.nu - System Updater" | ansi gradient --fgstart ($palette.red | str replace --regex "^#" "0x") --fgend ($palette.yellow | str replace --regex "^#" "0x"))
 [
   [icon color             label                   dependencies callback];
@@ -53,13 +37,13 @@ print ("up.nu - System Updater" | ansi gradient --fgstart ($palette.red | str re
   [""  $palette.peach    "Rust"                  [rustup]     { rustup update }]
   [""  $palette.yellow   "Deno"                  [deno]       { deno upgrade }]
   [""  $palette.pink     "Bun"                   [bun]        { bun upgrade }]
+  ["󰊕"  $palette.green    "Uiua"                  [cargo]      { cargo install uiua }]
 
-  ["󰪯"  $palette.yellow   "Yolk"                  [cargo]      { cargo install --force --locked yolk_dots }]
-  [""  $palette.peach    "mdBook"                [cargo]      { cargo install --force --locked mdbook }]
-  [""  $palette.green    "Nushell"               [cargo]      { cargo install --force --locked nu }]
-  [""  $palette.green    "Starship"              [cargo]      { cargo install --force --locked starship }]
-  [""  $palette.peach    "evcxr"                 [cargo]      { cargo install --force --locked evcxr_repl }]
-  [""  $palette.sky      "Typst"                 [cargo]      { cargo install --force --locked typst-cli }]
+  ["󰪯"  $palette.yellow   "Yolk"                  [cargo]      { cargo install yolk_dots }]
+  [""  $palette.peach    "mdBook"                [cargo]      { cargo install mdbook }]
+  [""  $palette.green    "Starship"              [cargo]      { cargo install starship }]
+  [""  $palette.peach    "evcxr"                 [cargo]      { cargo install evcxr_repl }]
+  [""  $palette.sky      "Typst"                 [cargo]      { cargo install typst-cli }]
 
   ["" $palette.yellow    "rofimoji"              [pipx]       { pipx install --force git+https://github.com/fdw/rofimoji.git }]
 ] | where { $in.dependencies | all { which $in | is-not-empty } }

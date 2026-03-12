@@ -21,8 +21,10 @@ do {
   }
 
   # Launch neofetch.
-  if (which waifufetch | is-not-empty) {
-    with-env {SHELL: $nu.current-exe} { waifufetch }
+  if (which aurorafetch | is-not-empty) {
+    aurorafetch
+  } else if (which waifufetch | is-not-empty) {
+    waifufetch
   } else if (which neofetch | is-not-empty) {
     neofetch
   }
