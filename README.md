@@ -60,6 +60,10 @@ typst compile --format "svg" scripts/logo.typ logo.svg
 
 ## TODO
 
+- [ ] `.desktop` launchers in `/usr/share/applications/` rely on
+      `/etc/environment` causing them to load a bad environment.
+- [ ] In Nushell interactive mode alias `mv` to a variant that asks before
+      overwriting
 - [ ] `clean` script for cleaning caches etc.
 - [ ] Migrate from light to clight
 - [ ] Take into account volume on different channels (e.g. headphones)

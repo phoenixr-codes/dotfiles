@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-03-24
+
+- Improve determining whether trash should be enabled in Nushell.
+
 ## 2026-01-23
 
 - Remove spell files from neovim

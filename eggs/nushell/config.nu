@@ -8,7 +8,7 @@ use theme.nu
 $env.config = {
   show_banner: false
   rm: {
-    always_trash: ("trash-support" in (version).features) # FIXME: Android build does mention `trash-support` in version output, but does not actually have it
+    always_trash: ("trash-support" in (version).features and $nu.os-info.name not-in ["android", "ios"])
   }
   error_style: "fancy"
   completions: {
