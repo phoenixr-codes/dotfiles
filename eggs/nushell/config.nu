@@ -18,6 +18,19 @@ $env.config = {
   }
   hooks: {
     display_output: "if (term size).columns >= 100 { table --icons --expand } else { table --icons }"
+    command_not_found: {|cmd_name| 
+      try {
+        job spawn { ffplay -nodisp -autoexit ~/Sounds/faaah.mp3 o+e>| ignore }
+        let pkgs = (pkgfile --binaries --verbose $cmd_name)
+        if ($pkgs | is-empty) {
+            return null
+        }
+        (
+            $"(ansi $env.config.color_config.shape_external)($cmd_name)(ansi reset) " +
+            $"may be found in the following packages:\n($pkgs)"
+        )
+      }
+    }
   }
   cursor_shape: {
     emacs: "line"

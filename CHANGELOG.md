@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-03-26
+
+- Implemented `command_not_found` hook in Nushell.
+
 ## 2026-03-24
 
 - Improve determining whether trash should be enabled in Nushell.
