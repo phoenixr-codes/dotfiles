@@ -21,6 +21,7 @@ export let eggs = #{
     nushell: #{ targets: "~/.config/nushell", templates: ["config.nu"], strategy: "merge" },
     starship: #{ targets: #{ "starship.toml": "~/.config/starship.toml" }, templates: ["starship.toml"] },
     hushlogin: #{ targets: #{ ".hushlogin": "~/.hushlogin" }, enabled: SYSTEM.platform == "Android" },
+    hypr: #{ targets: "~/.config/hypr"},
     dunst: #{ targets: "~/.config/dunst", templates: ["dunstrc"] },
     waifufetch: #{ targets: "~/.config/waifufetch" },
 };

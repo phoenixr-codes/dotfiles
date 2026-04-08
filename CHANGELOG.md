@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-04-08
+
+- Migrate to `nvim-treesitter` main branch
+
 ## 2026-03-26
 
 - Implemented `command_not_found` hook in Nushell.
