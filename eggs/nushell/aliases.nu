@@ -5,7 +5,7 @@ alias ga = git add
 alias gd = git diff
 alias gs = git status
 
-alias copy = xclip -selection clipboard
+alias copy = clip copy
 
 alias ':q' = exit
 

@@ -59,8 +59,6 @@ $env.DEVKITPPC = '/opt/devkitpro/devkitPPC'
 
 $env.GOBIN = ($nu.home-dir | path join '.go/bin')
 
-# TODO: LUA_PATH (luarocks)
-
 $env.MANPAGER = r#'sh -c 'sed -u -e "s/\\x1B\[[0-9;]*m//g; s/.\\x08//g" | bat -p -lman''#
 
 #$env.COM_MOJANG = ($nu.home-dir | path join ".local/share/mcpelauncher/games/com.mojang/")

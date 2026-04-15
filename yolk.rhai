@@ -11,17 +11,17 @@ export let data = #{
 };
 
 export let eggs = #{
-    bat: #{ targets: "~/.config/bat" },
-    git: #{ targets: "~/.config/git" },
-    nvim: #{ targets: "~/.config/nvim", strategy: "merge" },
-    neofetch: #{ targets: "~/.config/neofetch" },
-    rofi: #{ targets: "~/.config/rofi" },
-    kitty: #{ targets: "~/.config/kitty", strategy: "merge" },
+    bat:       #{ targets: "~/.config/bat" },
+    git:       #{ targets: "~/.config/git" },
+    nvim:      #{ targets: "~/.config/nvim", strategy: "merge" },
+    neofetch:  #{ targets: "~/.config/neofetch" },
+    rofi:      #{ targets: "~/.config/rofi" },
+    kitty:     #{ targets: "~/.config/kitty", strategy: "merge" },
     mklicense: #{ targets: "~/.config/mklicense" },
-    nushell: #{ targets: "~/.config/nushell", templates: ["config.nu"], strategy: "merge" },
-    starship: #{ targets: #{ "starship.toml": "~/.config/starship.toml" }, templates: ["starship.toml"] },
+    nushell:   #{ targets: "~/.config/nushell", templates: ["config.nu"], strategy: "merge" },
+    starship:  #{ targets: #{ "starship.toml": "~/.config/starship.toml" }, templates: ["starship.toml"] },
     hushlogin: #{ targets: #{ ".hushlogin": "~/.hushlogin" }, enabled: SYSTEM.platform == "Android" },
-    hypr: #{ targets: "~/.config/hypr"},
-    dunst: #{ targets: "~/.config/dunst", templates: ["dunstrc"] },
-    waifufetch: #{ targets: "~/.config/waifufetch" },
+    hypr:      #{ targets: "~/.config/hypr"},
+    dunst:     #{ targets: "~/.config/dunst", templates: ["dunstrc"] },
+    zathura:   #{ targets: "~/.config/zathura" },
 };

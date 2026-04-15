@@ -1,3 +1,16 @@
+require("nvim-treesitter").install {
+  "rust",
+  "javascript",
+  "zig",
+  "nu",
+  "toml",
+  "yaml",
+  "typescript",
+  "vimdoc",
+  "css",
+  "python",
+}
+
 vim.api.nvim_create_autocmd("User", {
   pattern = "TSUpdate",
   callback = function()

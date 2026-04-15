@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-04-09
+
+- Remove `waifufetch`
+- Update Neovim tree-sitter config
+
 ## 2026-04-08
 
 - Migrate to `nvim-treesitter` main branch

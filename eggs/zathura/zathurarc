@@ -1,0 +1,4 @@
+set selection-clipboard clipboard
+set font "GoogleSansCode Nerd Font"
+
+include themes/catppuccin-mocha.rc
