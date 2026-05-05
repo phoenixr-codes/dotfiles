@@ -28,7 +28,6 @@ print ("up.nu - System Updater" | ansi gradient --fgstart ($palette.red | str re
   ["󰒋"  $palette.pink     "System"                [eos-update] { yay --noconfirm }]
 
   [""  $palette.sapphire "VHS"                   [go]         { go install github.com/charmbracelet/vhs@latest }]
-  [""  $palette.sapphire "Glow"                  [go]         { go install github.com/charmbracelet/glow@latest }]
   [""  $palette.sapphire "Task"                  [go]         { go install github.com/go-task/task/v3/cmd/task@latest }]
   [""  $palette.sapphire "ascii-image-converter" [go]         { go install github.com/TheZoraiz/ascii-image-converter@latest }]
 
@@ -45,7 +44,9 @@ print ("up.nu - System Updater" | ansi gradient --fgstart ($palette.red | str re
   [""  $palette.peach    "evcxr"                 [cargo]      { cargo install evcxr_repl }]
   [""  $palette.sky      "Typst"                 [cargo]      { cargo install typst-cli }]
 
-  ["" $palette.yellow    "rofimoji"              [pipx]       { pipx install --force git+https://github.com/fdw/rofimoji.git }]
+  ["" $palette.yellow    "rofimoji"              [pipx]       { pipx upgrade git+https://github.com/fdw/rofimoji.git }]
+  ["", $palette.red      "yt-dlp"                [pipx]       { pipx upgrade yt-dlp }]
+  ["", $palette.red      "gitmoji"               [bun]        { bun install --global gitmoji-cli }]
 ] | where { $in.dependencies | all { which $in | is-not-empty } }
   | each { $in | update label $"(ansi --escape {fg: $in.color})($in.icon) ($in.label)(ansi reset)" }
   | input list --multi --display label "Select what you want to update"

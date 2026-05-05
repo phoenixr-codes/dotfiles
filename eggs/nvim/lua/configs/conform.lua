@@ -13,6 +13,7 @@ local options = {
     },
     nim = { "nimpretty" },
     typst = { "typstyle" },
+    xml = { "xmlformatter" },
   },
 
   -- format_on_save = {

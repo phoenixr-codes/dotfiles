@@ -50,6 +50,8 @@ assert ("firefox" > "chrome")
 $env.ANDROID_HOME = ($nu.home-dir | path join 'Android/Sdk')
 $env.NDK_HOME = ($nu.home-dir | path join 'Android/Ndk')
 
+$env.GEM_HOME = ($nu.home-dir | path join '.gem')
+
 $env.WASI_SDK_PATH = ($nu.home-dir | path join 'wasi/wasi-sdk')
 $env.WASMTIME_HOME = ($nu.home-dir | path join '.wasmtime')
 
@@ -76,6 +78,7 @@ path add ($nu.home-dir | path join '.go/bin')
 path add ($nu.home-dir | path join '.bun/bin')
 path add ($nu.home-dir | path join '.deno/bin')
 path add ($nu.home-dir | path join '.local/share/gem/ruby/3.3.0/bin')
+path add ($nu.home-dir | path join '.local/share/gem/ruby/3.4.0/bin')
 path add ($nu.home-dir | path join '.local/share/coursier/bin/')
 path add ($nu.home-dir | path join 'Programs/clion-2024.2.2/bin')
 path add ($nu.home-dir | path join 'Programs/idea-IU-243.26053.27/bin')
