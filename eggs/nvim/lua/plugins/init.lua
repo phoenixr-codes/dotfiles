@@ -200,7 +200,7 @@ return {
         SECURITY = {
           icon = "",
           color = "error",
-        }
+        },
       },
       highlight = {
         keyword = "bg",
@@ -210,5 +210,13 @@ return {
 
   {
     "elkowar/yuck.vim",
+  },
+
+  {
+    "benomahony/uv.nvim",
+    ft = { "python" },
+    opts = {
+      picker_integration = true,
+    },
   },
 }

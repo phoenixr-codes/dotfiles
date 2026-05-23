@@ -52,6 +52,8 @@ $env.NDK_HOME = ($nu.home-dir | path join 'Android/Ndk')
 
 $env.GEM_HOME = ($nu.home-dir | path join '.gem')
 
+$env.ZVM_INSTALL = ($nu.home-dir | path join ".zvm/self")
+
 $env.WASI_SDK_PATH = ($nu.home-dir | path join 'wasi/wasi-sdk')
 $env.WASMTIME_HOME = ($nu.home-dir | path join '.wasmtime')
 
@@ -77,15 +79,15 @@ path add ($nu.home-dir | path join '.cargo/bin')
 path add ($nu.home-dir | path join '.go/bin')
 path add ($nu.home-dir | path join '.bun/bin')
 path add ($nu.home-dir | path join '.deno/bin')
+path add ($nu.home-dir | path join '.zvm/bin')
+path add $env.ZVM_INSTALL
 path add ($nu.home-dir | path join '.local/share/gem/ruby/3.3.0/bin')
 path add ($nu.home-dir | path join '.local/share/gem/ruby/3.4.0/bin')
 path add ($nu.home-dir | path join '.local/share/coursier/bin/')
 path add ($nu.home-dir | path join 'Programs/clion-2024.2.2/bin')
 path add ($nu.home-dir | path join 'Programs/idea-IU-243.26053.27/bin')
-path add ($nu.home-dir | path join 'Programs/zig')
 path add ($nu.home-dir | path join 'Programs/FontPatcher')
 path add ($nu.home-dir | path join 'Projects/Odin')
-path add ($nu.home-dir | path join 'Projects/zls/zig-out/bin')
 path add ($nu.home-dir | path join 'Projects/wi')
 path add ($env.DEVKITPRO | path join 'tools/bin')
 path add ($env.DEVKITARM | path join 'bin')

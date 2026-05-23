@@ -16,8 +16,10 @@ map({ "n", "v" }, "<RightMouse>", function()
   -- clicked buf
   local buf = vim.api.nvim_win_get_buf(vim.fn.getmousepos().winid)
 
-  local additional_buttons = { name = "Rename symbol", cmd = require("nvchad.lsp.renamer"), rtxt = "<leader>ra" }
-  local options = vim.bo[buf].ft == "NvimTree" and require("menus.nvimtree") or { additional_buttons, unpack(require("menus.default")) }
+  local additional_buttons = {
+    { name = "Rename symbol", cmd = require("nvchad.lsp.renamer"), rtxt = "<leader>ra" },
+  }
+  local options = vim.bo[buf].ft == "NvimTree" and require("menus.nvimtree") or { unpack(additional_buttons), unpack(require("menus.default")) }
 
   require("menu").open(options, { mouse = true })
 end, {})
