@@ -120,7 +120,7 @@ def main [
   }
 
   # Perform backup
-  let backup_dir_default = $env.HOME | path join $".dotfiles_backup_(random uuid -v 7)"
+  let backup_dir_default = $"/var/tmp/dotfiles_backup_(random uuid -v 7)"
   let backup_dir = ask "Where do you want to store the backup?" --default $backup_dir_default
   log info "Performing backup of targeted files and directories"
   if not $simulate {
