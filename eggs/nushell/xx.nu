@@ -21,7 +21,7 @@ export def "brightness increase" [
   --duration: duration # Dynamically increase the brightness with the given duration
   # TODO: easings other than linear
 ]: nothing -> nothing {
-  job spawn --tag "change-brightness" {
+  job spawn --description "change-brightness" {
     let duration = if ($duration == null) { 0ns } else { $duration }
     let steps = 50
     let initial_brightness = brightness
