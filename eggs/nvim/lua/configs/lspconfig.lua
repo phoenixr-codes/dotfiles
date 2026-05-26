@@ -1,78 +1,64 @@
 -- load defaults i.e lua_lsp
 require("nvchad.configs.lspconfig").defaults()
 
-local lspconfig = vim.lsp.config
-
 local servers = {
-  "html",
-  "cssls",
-  "pylsp",
-  "ruby_lsp",
-  --"roc_ls",
-  "vls",
-  "ccls",
-  "marksman",
-  "pest_ls",
-  "nim_langserver",
-  "bashls",
-  "tinymist",
-  --"gleam",
-  "zls",
-  "nushell",
-  "metals",
-}
-local nvlsp = require "nvchad.configs.lspconfig"
+  html = {},
+  cssls = {},
+  pylsp = {},
+  ruby_lsp = {},
+  vls = {},
+  ccls = {},
+  marksman = {},
+  pest_ls = {},
+  nim_langserver = {},
+  bashls = {},
+  tinymist = {},
+  zls = {},
+  metals = {},
 
--- lsps with default config
-for _, lsp in ipairs(servers) do
-  lspconfig(lsp, {
-    on_attach = nvlsp.on_attach,
-    on_init = nvlsp.on_init,
-    capabilities = nvlsp.capabilities,
-  })
-  vim.lsp.enable(lsp)
-end
-
-lspconfig("java_language_server", {
-  cmd = { "java-language-server" },
-})
-vim.lsp.enable "java_language_server"
-
-lspconfig("jsonls", {
-  settings = {
-    json = {
-      schemas = require("schemastore").json.schemas(),
-      validate = { enable = true },
-    },
+  java_language_server = {
+    cmd = { "java-language-server" },
   },
-})
-vim.lsp.enable "jsonls"
 
-lspconfig("ts_ls", {
-  on_attach = nvlsp.on_attach,
-  on_init = nvlsp.on_init,
-  root_markers = { "package.json" },
-  capabilities = nvlsp.capabilities,
-  single_file_support = false,
-})
-vim.lsp.enable "ts_ls"
-
--- lspconfig("denols", {
---   on_attach = nvlsp.on_attach,
---   on_init = nvlsp.on_init,
---   root_markers = { { "deno.json", "deno.jsonc" } },
---   capabilities = nvlsp.capabilities,
--- })
--- vim.lsp.enable "denols"
-
-lspconfig("taplo", {
-  settings = {
-    evenBetterToml = {
-      schema = {
-        enabled = true, -- Enable schema support
-        repositoryEnabled = true, -- Enable fetching schemas from the repository
+  jsonls = {
+    settings = {
+      json = {
+        schemas = require("schemastore").json.schemas(),
+        validate = { enable = true },
       },
     },
   },
-})
-vim.lsp.enable "taplo"
+
+  ts_ls = {
+    root_markers = { "package.json" },
+    single_file_support = false,
+  },
+
+  denols = {
+    root_markers = { { "deno.json", "deno.jsonc" } },
+  },
+
+  taplo = {
+    settings = {
+      evenBetterToml = {
+        schema = {
+          enabled = true, -- Enable schema support
+          repositoryEnabled = true, -- Enable fetching schemas from the repository
+        },
+      },
+    },
+  },
+
+  nushell = {
+    cmd = {
+      "nu",
+      "--lsp",
+      "--no-config-file", -- see also: https://github.com/helix-editor/helix/discussions/12660
+    },
+  },
+}
+
+for name, opts in pairs(servers) do
+  vim.lsp.config(name, opts)
+  vim.lsp.enable(name)
+end
