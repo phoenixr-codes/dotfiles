@@ -15,50 +15,28 @@ return {
   {
     "nvim-tree/nvim-web-devicons",
     opts = function()
+      local minecraft = {
+        icon = "󰍳",
+        color = "#70b237",
+        cterm_color = "2",
+        name = "Minecraft",
+      }
+      local localization = {
+        icon = "",
+        color = "#74c7ec",
+        cterm_color = "25",
+        name = "Localization",
+      }
       dofile(vim.g.base46_cache .. "devicons")
       return {
         override = require "nvchad.icons.devicons",
         override_by_extension = {
-          lang = {
-            icon = "",
-            color = "#74c7ec",
-            cterm_color = "25",
-            name = "Language",
-          },
-          ftl = {
-            icon = "",
-            color = "#74c7ec",
-            cterm_color = "25",
-            name = "Language",
-          },
-          mcfunction = {
-            icon = "󰍳",
-            -- icon = "󰿠",
-            color = "#70b237",
-            cterm_color = "2",
-            name = "Minecraft",
-          },
-          mcaddon = {
-            icon = "󰍳",
-            -- icon = "󰿠",
-            color = "#70b237",
-            cterm_color = "2",
-            name = "Minecraft",
-          },
-          mcpack = {
-            icon = "󰍳",
-            -- icon = "󰿠",
-            color = "#70b237",
-            cterm_color = "2",
-            name = "Minecraft",
-          },
-          mcstructure = {
-            icon = "󰍳",
-            -- icon = "󰿠",
-            color = "#70b237",
-            cterm_color = "2",
-            name = "Minecraft",
-          },
+          lang = localization,
+          ftl = localization,
+          mcfunction = minecraft,
+          mcaddon = minecraft,
+          mcpack = minecraft,
+          mcstructure = minecraft,
         },
       }
     end,
