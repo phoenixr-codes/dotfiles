@@ -189,12 +189,4 @@ return {
   {
     "elkowar/yuck.vim",
   },
-
-  {
-    "benomahony/uv.nvim",
-    ft = { "python" },
-    opts = {
-      picker_integration = true,
-    },
-  },
 }

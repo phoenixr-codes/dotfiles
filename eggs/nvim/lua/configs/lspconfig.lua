@@ -4,7 +4,8 @@ require("nvchad.configs.lspconfig").defaults()
 local servers = {
   html = {},
   cssls = {},
-  pylsp = {},
+  basedpyright = {},
+  ruff = {},
   ruby_lsp = {},
   vls = {},
   ccls = {},

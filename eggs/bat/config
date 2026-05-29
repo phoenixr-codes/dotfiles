@@ -1,6 +1,6 @@
 --theme "Catppuccin Frappe"
 --italic-text "always"
---style "plain"
+--style "numbers"
 
 --map-syntax "*.lang:INI"
 --map-syntax "allay.lock:TOML"

@@ -22,4 +22,3 @@ source scripts/custom-completions/rustup/rustup-completions.nu
 source scripts/custom-completions/ssh/ssh-completions.nu
 source scripts/custom-completions/tar/tar-completions.nu
 source scripts/custom-completions/typst/typst-completions.nu
-source scripts/custom-completions/yarn/yarn-v4-completions.nu
