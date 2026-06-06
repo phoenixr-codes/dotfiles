@@ -13,10 +13,11 @@ do {
     true
   }
   if $motd_is_old {
-    try {
-      # do not make a request in case we have no wifi
-      let motd = (http get --max-time 2sec https://zenquotes.io/api/today/ | first)
-      $"($motd.q)\n~ ($motd.a)" | save -f ($nu.home-dir | path join $motd_path)
+    job spawn {
+      let motd = try { http get --max-time 10sec https://zenquotes.io/api/today | first }
+      if $motd != null {
+        $"($motd.q)\n~ ($motd.a)" | save --force ($nu.home-dir | path join $motd_path)
+      }
     }
   }
 
