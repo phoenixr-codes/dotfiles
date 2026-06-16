@@ -22,12 +22,17 @@ do {
   }
 
   # Launch neofetch.
-  if (which aurorafetch | is-not-empty) {
-    aurorafetch
-  } else if (which waifufetch | is-not-empty) {
-    waifufetch
-  } else if (which neofetch | is-not-empty) {
-    neofetch
+  let fetchers = [
+    # Bun-based project temporarily disabled as I uninstalled Bun.
+    #"aurorafetch"
+    #"waifufetch"
+    "neofetch"
+  ]
+  for fetcher in $fetchers {
+    if (which $fetcher | is-not-empty) {
+      try { run-external $fetcher } catch { continue }
+      break
+    }
   }
 }
 
