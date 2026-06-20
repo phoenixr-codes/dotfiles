@@ -26,6 +26,7 @@ do {
     # Bun-based project temporarily disabled as I uninstalled Bun.
     #"aurorafetch"
     #"waifufetch"
+    "fetch"
     "neofetch"
   ]
   for fetcher in $fetchers {

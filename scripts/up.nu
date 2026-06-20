@@ -35,7 +35,6 @@ print ("up.nu - System Updater" | ansi gradient --fgstart ($palette.red | str re
   [""  $palette.sky      "V"                     [v]          { v up }]
   [""  $palette.peach    "Rust"                  [rustup]     { rustup update }]
   [""  $palette.yellow   "Deno"                  [deno]       { deno upgrade }]
-  [""  $palette.pink     "Bun"                   [bun]        { bun upgrade }]
   ["󰊕"  $palette.green    "Uiua"                  [cargo]      { cargo install uiua }]
 
   ["󰪯"  $palette.yellow   "Yolk"                  [cargo]      { cargo install yolk_dots }]
@@ -46,7 +45,7 @@ print ("up.nu - System Updater" | ansi gradient --fgstart ($palette.red | str re
 
   ["" $palette.yellow    "rofimoji"              [pipx]       { pipx upgrade git+https://github.com/fdw/rofimoji.git }]
   ["", $palette.red      "yt-dlp"                [pipx]       { pipx upgrade yt-dlp }]
-  ["", $palette.red      "gitmoji"               [bun]        { bun install --global gitmoji-cli }]
+  ["", $palette.red      "gitmoji"               [bun]        { npm install --global gitmoji-cli }]
 ] | where { $in.dependencies | all { which $in | is-not-empty } }
   | each { $in | update label $"(ansi --escape {fg: $in.color})($in.icon) ($in.label)(ansi reset)" }
   | input list --multi --display label "Select what you want to update"
