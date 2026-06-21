@@ -1,3 +1,7 @@
+fn key_by_value(obj, value) {
+  return keys(drain(obj, |key, val| val == value)).get(0)
+}
+
 export let theme = #{
   catppuccin_mocha: "Catppuccin Mocha",
   catppuccin_frappe: "Catppuccin Frappe",
