@@ -2,6 +2,9 @@
     <img src="logo.svg" width="45%" alt="dotfiles" />
 </p>
 
+> [!CAUTION]
+> Migrated to [Codeberg](https://codeberg.org/jonasds/dotfiles).
+
 ## Requirements
 
 - [Yolk][] (0.3.4)
